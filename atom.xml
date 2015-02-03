@@ -4,7 +4,7 @@
     <title><![CDATA[Daniel Gadd]]></title>
     <link href="http://daniel-gadd.github.io/atom.xml" rel="self"/>
     <link href="http://daniel-gadd.github.io/"/>
-    <updated>2015-02-04T10:47:12+13:00</updated>
+    <updated>2015-02-04T11:18:09+13:00</updated>
     <id>http://daniel-gadd.github.io/</id>
     <author>
         <name><![CDATA[Daniel Gadd]]></name>
@@ -12,6 +12,41 @@
     </author>
     <generator uri="http://octopress.org/">Octopress</generator>
 
+    
+    <entry>
+        <title type="html"><![CDATA[Notes on Octopress]]></title>
+        <link href="http://daniel-gadd.github.io/blog/2015/02/04/notes-on-octopress/"/>
+        <updated>2015-02-04T11:10:31+13:00</updated>
+        <id>http://daniel-gadd.github.io/blog/2015/02/04/notes-on-octopress</id>
+        <content type="html"><![CDATA[<p>Here are a few notes and code snippets I use to manage octopress, They arnt
+exactly new, just needed a place to put them incase I forget.</p>
+
+<!-- more -->
+
+
+<p><strong>Create A new blog entry:</strong></p>
+
+<p><code>rake new_post["My Post Name Here"]</code></p>
+
+<p><strong>Preview my development code locally:</strong></p>
+
+<p><code>rake preview</code></p>
+
+<p><strong>Generate public code ready to deploy:</strong></p>
+
+<p><code>rake generate</code></p>
+
+<p><strong>Deploy my code to github:</strong></p>
+
+<p><code>rake deploy</code></p>
+
+<p><strong>Push my source code up to the source branch:</strong></p>
+
+<p><code>git push origin source</code></p>
+
+<p>Ill add to these as I see fit or incase i need more commands to jog my memory.</p>
+]]></content>
+    </entry>
     
     <entry>
         <title type="html"><![CDATA[My First Post]]></title>

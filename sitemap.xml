@@ -1,25 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://daniel-gadd.github.io/blog/2015/02/04/notes-on-octopress/</loc>
+    <lastmod>2015-02-04T11:10:31+13:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>http://daniel-gadd.github.io/blog/2015/02/04/my-first-post/</loc>
     <lastmod>2015-02-04T08:49:04+13:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://daniel-gadd.github.io/blog/archives/</loc>
-    <lastmod>2015-02-04T10:47:12+13:00</lastmod>
+    <lastmod>2015-02-04T11:18:09+13:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://daniel-gadd.github.io/blog/</loc>
-    <lastmod>2015-02-04T10:47:12+13:00</lastmod>
+    <lastmod>2015-02-04T11:18:09+13:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://daniel-gadd.github.io/</loc>
-    <lastmod>2015-02-04T10:47:12+13:00</lastmod>
+    <lastmod>2015-02-04T11:18:09+13:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
