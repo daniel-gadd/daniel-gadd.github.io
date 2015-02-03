@@ -4,7 +4,7 @@
     <title><![CDATA[Daniel Gadd]]></title>
     <link href="http://daniel-gadd.github.io/atom.xml" rel="self"/>
     <link href="http://daniel-gadd.github.io/"/>
-    <updated>2015-02-04T09:30:20+13:00</updated>
+    <updated>2015-02-04T09:41:54+13:00</updated>
     <id>http://daniel-gadd.github.io/</id>
     <author>
         <name><![CDATA[Daniel Gadd]]></name>
@@ -18,7 +18,9 @@
         <link href="http://daniel-gadd.github.io/blog/2015/02/04/my-first-post/"/>
         <updated>2015-02-04T08:49:04+13:00</updated>
         <id>http://daniel-gadd.github.io/blog/2015/02/04/my-first-post</id>
-        <content type="html"><![CDATA[<p>This is mt first blog post. Hopefully It wont be my last.</p>
+        <content type="html"><![CDATA[<p>This is my first blog post. Hopefully It wont be my last.</p>
+
+<p>I will hopefully use this blog to post useful information and stuff which i dont want to forget</p>
 ]]></content>
     </entry>
     
