@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
     <title><![CDATA[Category: octopress | Daniel Gadd]]></title>
-    <link href="http://yoursite.com/blog/categories/octopress/atom.xml" rel="self"/>
-    <link href="http://yoursite.com/"/>
-    <updated>2015-02-04T08:53:47+13:00</updated>
-    <id>http://yoursite.com/</id>
+    <link href="http://daniel-gadd.github.io/blog/categories/octopress/atom.xml" rel="self"/>
+    <link href="http://daniel-gadd.github.io/"/>
+    <updated>2015-02-04T09:30:20+13:00</updated>
+    <id>http://daniel-gadd.github.io/</id>
     <author>
         <name><![CDATA[Daniel Gadd]]></name>
         
@@ -15,9 +15,9 @@
     
     <entry>
         <title type="html"><![CDATA[My First Post]]></title>
-        <link href="http://yoursite.com/blog/2015/02/04/my-first-post/"/>
+        <link href="http://daniel-gadd.github.io/blog/2015/02/04/my-first-post/"/>
         <updated>2015-02-04T08:49:04+13:00</updated>
-        <id>http://yoursite.com/blog/2015/02/04/my-first-post</id>
+        <id>http://daniel-gadd.github.io/blog/2015/02/04/my-first-post</id>
         <content type="html"><![CDATA[<p>This is mt first blog post. Hopefully It wont be my last.</p>
 ]]></content>
     </entry>
