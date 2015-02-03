@@ -7,4 +7,7 @@ categories:
   - octopress
 ---
 
-This is mt first blog post. Hopefully It wont be my last.
+This is my first blog post. Hopefully It wont be my last.
+
+I will hopefully use this blog to post useful information and stuff which i dont want to forget
+
