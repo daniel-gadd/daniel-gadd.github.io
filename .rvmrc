@@ -1,0 +1,2 @@
+rvm use --create ruby-2.1.5@octopress
+bundle install
