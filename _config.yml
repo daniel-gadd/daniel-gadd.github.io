@@ -2,7 +2,7 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://daniel-gadd.github.io
+url: http://www.gadd.co.nz
 title: Daniel Gadd
 subtitle: ... A site so i dont forget stuff
 author: Daniel Gadd
@@ -136,7 +136,7 @@ disqus_short_name:
 disqus_show_comment_count: false
 
 # Google Analytics
-google_analytics_tracking_id:
+google_analytics_tracking_id: "UA-59342030-1"
 
 # Facebook Like
 facebook_like: false
