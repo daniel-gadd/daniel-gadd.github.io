@@ -12,7 +12,7 @@
         <title>Blog index - Daniel Gadd</title>
         <meta name="author" content="Daniel Gadd">
         
-        <meta name="description" content=" Blog Index 2015 Feb 04 Notes on Octopress octopress Feb 04 My First Post octopress ">
+        <meta name="description" content=" Blog Index 2015 Feb 04 Zaw Plugin zsh Feb 04 Notes on Octopress octopress Feb 04 My First Post octopress ">
         
         <meta name="viewport" content="width=device-width">
         <link rel="canonical" href="http://daniel-gadd.github.io/blog/archives">
@@ -92,6 +92,45 @@
   
     
     <h2>2015</h2>
+  
+    <article>
+      
+
+<div class="row">
+
+    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+        <time class="article__date article__date--listing" datetime="2015-02-04T12:44:15+13:00" pubdate>
+            <span class='month'>Feb</span> <span class='day'>04</span>
+        </time>
+    </div>
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+        <h1 class="article__title h3"><a href="/blog/2015/02/04/zaw-plugin/">Zaw Plugin</a></h1>
+        
+            <footer class="article__meta">
+                
+
+    <div class="article__tags pull-left">
+        <i class="fa fa-tags"></i>
+        <ul class="unstyled">
+        
+            
+                <li><a class='category' href='/blog/categories/zsh/'>zsh</a></li>
+            
+            
+        </ul>
+    </div>
+
+
+            </footer>
+        
+        <hr class="divider">
+    </div>
+
+</div>
+
+    </article>
+  
+  
   
     <article>
       
@@ -212,6 +251,10 @@
     <ul class="divided">
         
         <li class="post">
+            <a href="/blog/2015/02/04/zaw-plugin/">Zaw Plugin</a>
+        </li>
+        
+        <li class="post">
             <a href="/blog/2015/02/04/notes-on-octopress/">Notes on Octopress</a>
         </li>
         
@@ -219,6 +262,24 @@
             <a href="/blog/2015/02/04/my-first-post/">My First Post</a>
         </li>
         
+    </ul>
+</section>
+
+<section id="github-repos" class="col-xs-12 col-sm-6 col-md-12">
+    <h1>
+        GitHub Repos
+        
+        <small class="pull-right">
+            <a class="btn" href="//github.com/daniel-gadd" title="@daniel-gadd on GitHub" target="_blank">
+                <i class="fa fa-external-link"></i>
+            </a>
+        </small>
+        
+    </h1>
+    <ul id="gh_repos" class="divided">
+        <li class="loading">
+            <i class="fa fa-spinner fa-spin"></i>
+        </li>
     </ul>
 </section>
 
@@ -268,6 +329,26 @@
 
 
 
+
+<script>
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'daniel-gadd',
+            count: 0,
+            skip_forks: false,
+            target: '#gh_repos'
+        });
+    });
+</script>
+<script src="/javascripts/github.js"></script>
 
 
 

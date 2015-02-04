@@ -9,14 +9,14 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Daniel Gadd</title>
+        <title>Zaw Plugin - Daniel Gadd</title>
         <meta name="author" content="Daniel Gadd">
         
         <meta name="description" content="Zaw Plugin Feb 4th, 2015 zsh What is zaw Zaw is zsh plugin which acts like a widget to bring together a wealth of resources
 making it easier to find &hellip;">
         
         <meta name="viewport" content="width=device-width">
-        <link rel="canonical" href="http://daniel-gadd.github.io/blog">
+        <link rel="canonical" href="http://daniel-gadd.github.io/blog/2015/02/04/zaw-plugin">
 
         <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic' rel='stylesheet' type='text/css'>
         <link href="http://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet" type="text/css">
@@ -76,15 +76,10 @@ making it easier to find &hellip;">
                 
                 <div class="col-xs-12 col-sm-10 col-md-8 col-lg-8">
                 
-                        
+                    <article class="article article--single">
+    <header class="article__header">
     
-        
-        <article class="article article--index">
-            <header class="article__header">
-    
-        <h1 class="h2 article__title">
-            <a href="/blog/2015/02/04/zaw-plugin/">Zaw Plugin</a>
-        </h1>
+        <h1 class="article__title">Zaw Plugin</h1>
     
 
     
@@ -107,10 +102,11 @@ making it easier to find &hellip;">
         <i class="fa fa-tags"></i>
         <ul class="unstyled">
         
+
             
                 <li><a class='category' href='/blog/categories/zsh/'>zsh</a></li>
             
-            
+        
         </ul>
     </div>
 
@@ -123,137 +119,94 @@ making it easier to find &hellip;">
 
 
 
-    <div class="article__content clearfix">
-        <h3>What is zaw</h3>
+    <h3>What is zaw</h3>
 
 <p>Zaw is zsh plugin which acts like a widget to bring together a wealth of resources
 making it easier to find what you need in you shell.</p>
 
-
-        <a class="btn pull-right" href="/blog/2015/02/04/zaw-plugin/">Read on &rarr;</a>
-    </div>
+<!-- more -->
 
 
-        </article>
-        <hr>
-    
-        
-        <article class="article article--index">
-            <header class="article__header">
-    
-        <h1 class="h2 article__title">
-            <a href="/blog/2015/02/04/notes-on-octopress/">Notes on Octopress</a>
-        </h1>
-    
+<h3>How do I use it</h3>
 
-    
-        <div class="article__meta clearfix">
-            
+<p>I use zaw mainly to replace the reverise lookup functionality of zsh, why?
+Because zaw allows wildcard and incomplete searching of commands as well as a
+nice scrollable list.</p>
 
+<p>I also like it because I can hit <code>tab</code> and get an option to edit the histroy
+command in the buffer before executing it.</p>
 
+<h3>Installation</h3>
 
+<p>My installation is available off my dotfiles repo, but if want to install this
+manually - to how I run it, follow these steps:</p>
 
+<p>Im making an assumption you&rsquo;re using the <a href="https://github.com/robbyrussell/oh-my-zsh">oh-my-zsh</a> framework.</p>
 
+<h4>Step 1: Clone the repo</h4>
 
-    <time class="article__date pull-left" datetime="2015-02-04T11:10:31+13:00" pubdate><i class="fa fa-calendar"></i> Feb 4th, 2015</time>
+<p><code>git clone git://github.com/zsh-users/zaw.git</code></p>
 
+<h4>Step 2: Update zaw plugin</h4>
 
+<p>We want to update the zaw plugin code to use ^R key binding, and to limit the output to 10 lines,
+do to this open <code>zaw.plugin.zsh</code> file in the root of the zaw repo and update the following lines:</p>
 
-
-            
-
-    <div class="article__tags pull-left">
-        <i class="fa fa-tags"></i>
-        <ul class="unstyled">
-        
-            
-                <li><a class='category' href='/blog/categories/octopress/'>octopress</a></li>
-            
-            
-        </ul>
-    </div>
-
-
-            
-        </div>
-    
-</header>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>bindkey '^R' zaw-history
+</span><span class='line'>  bindkey '^Z' zaw
+</span><span class='line'>
+</span><span class='line'>  #zstyle ':filter-select:highlight' matched fg=green
+</span><span class='line'>  zstyle ':filter-select' max-lines 15
+</span><span class='line'>  zstyle ':filter-select' rotate-list yes
+</span><span class='line'>  zstyle ':filter-select' case-insensitive yes
+</span><span class='line'>  zstyle ':filter-select' extended-search yes # see https://github.com/zsh-users/zaw for explanation</span></code></pre></td></tr></table></div></figure>
 
 
+<h4>Step 3: Setup zshrc opts</h4>
+
+<p>Here we want to disable search dups in our history as zaw by default loads your entire history file,
+which can make it bloated, slow and hard to get what you want fast.</p>
+
+<p>Add the following options to your <code>~/.zshrc</code> file:</p>
+
+<figure class='code'><figcaption><span>~/.zshrc </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>setopt APPEND_HISTORY
+</span><span class='line'>setopt EXTENDED_HISTORY
+</span><span class='line'>setopt INC_APPEND_HISTORY
+</span><span class='line'>setopt HIST_FIND_NO_DUPS
+</span><span class='line'>setopt HIST_IGNORE_SPACE
+</span><span class='line'>setopt NO_HIST_BEEP
+</span><span class='line'>setopt SHARE_HISTORY
+</span><span class='line'>setopt HIST_IGNORE_ALL_DUPS
+</span><span class='line'>setopt HIST_IGNORE_DUPS</span></code></pre></td></tr></table></div></figure>
 
 
-    <div class="article__content clearfix">
-        <p>Here are a few notes and code snippets I use to manage octopress, They arnt
-exactly new, just needed a place to put them incase I forget.</p>
+<h4>Step 4: Reload zsh</h4>
 
-
-        <a class="btn pull-right" href="/blog/2015/02/04/notes-on-octopress/">Read on &rarr;</a>
-    </div>
-
-
-        </article>
-        <hr>
-    
-        
-        <article class="article article--index">
-            <header class="article__header">
-    
-        <h1 class="h2 article__title">
-            <a href="/blog/2015/02/04/my-first-post/">My First Post</a>
-        </h1>
-    
-
-    
-        <div class="article__meta clearfix">
-            
-
-
+<p>Lastly reload your zsh shell by using <code>source ~/.zshrc</code> or loading a new terminal window.</p>
 
 
 
-
-    <time class="article__date pull-left" datetime="2015-02-04T08:49:04+13:00" pubdate><i class="fa fa-calendar"></i> Feb 4th, 2015</time>
-
+</article>
 
 
-
-            
-
-    <div class="article__tags pull-left">
-        <i class="fa fa-tags"></i>
-        <ul class="unstyled">
-        
-            
-                <li><a class='category' href='/blog/categories/octopress/'>octopress</a></li>
-            
-            
-        </ul>
-    </div>
-
-
-            
-        </div>
-    
-</header>
-
-
-
-
-    <p>This is my first blog post. Hopefully It wont be my last.</p>
-
-<p>I will hopefully use this blog to post useful information and stuff which i dont want to forget</p>
-
-
-
-        </article>
-        <hr>
-    
-
-    <div class="pagination">
-    
-
-    
-    </div>
 
                 </div>
 

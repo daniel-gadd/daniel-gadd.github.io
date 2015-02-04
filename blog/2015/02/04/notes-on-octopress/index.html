@@ -191,6 +191,10 @@ exactly new, just needed a place to put them incase I forget.</p>
     <ul class="divided">
         
         <li class="post">
+            <a href="/blog/2015/02/04/zaw-plugin/">Zaw Plugin</a>
+        </li>
+        
+        <li class="post">
             <a href="/blog/2015/02/04/notes-on-octopress/">Notes on Octopress</a>
         </li>
         
@@ -198,6 +202,24 @@ exactly new, just needed a place to put them incase I forget.</p>
             <a href="/blog/2015/02/04/my-first-post/">My First Post</a>
         </li>
         
+    </ul>
+</section>
+
+<section id="github-repos" class="col-xs-12 col-sm-6 col-md-12">
+    <h1>
+        GitHub Repos
+        
+        <small class="pull-right">
+            <a class="btn" href="//github.com/daniel-gadd" title="@daniel-gadd on GitHub" target="_blank">
+                <i class="fa fa-external-link"></i>
+            </a>
+        </small>
+        
+    </h1>
+    <ul id="gh_repos" class="divided">
+        <li class="loading">
+            <i class="fa fa-spinner fa-spin"></i>
+        </li>
     </ul>
 </section>
 
@@ -247,6 +269,26 @@ exactly new, just needed a place to put them incase I forget.</p>
 
 
 
+
+<script>
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'daniel-gadd',
+            count: 0,
+            skip_forks: false,
+            target: '#gh_repos'
+        });
+    });
+</script>
+<script src="/javascripts/github.js"></script>
 
 
 
