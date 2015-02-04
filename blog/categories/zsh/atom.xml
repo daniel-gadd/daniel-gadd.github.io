@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
     <title><![CDATA[Category: zsh | Daniel Gadd]]></title>
-    <link href="http://daniel-gadd.github.io/blog/categories/zsh/atom.xml" rel="self"/>
-    <link href="http://daniel-gadd.github.io/"/>
-    <updated>2015-02-04T15:55:24+13:00</updated>
-    <id>http://daniel-gadd.github.io/</id>
+    <link href="http://www.gadd.co.nz/blog/categories/zsh/atom.xml" rel="self"/>
+    <link href="http://www.gadd.co.nz/"/>
+    <updated>2015-02-04T21:18:31+13:00</updated>
+    <id>http://www.gadd.co.nz/</id>
     <author>
         <name><![CDATA[Daniel Gadd]]></name>
         
@@ -15,9 +15,9 @@
     
     <entry>
         <title type="html"><![CDATA[Zaw Plugin]]></title>
-        <link href="http://daniel-gadd.github.io/blog/2015/02/04/zaw-plugin/"/>
+        <link href="http://www.gadd.co.nz/blog/2015/02/04/zaw-plugin/"/>
         <updated>2015-02-04T12:44:15+13:00</updated>
-        <id>http://daniel-gadd.github.io/blog/2015/02/04/zaw-plugin</id>
+        <id>http://www.gadd.co.nz/blog/2015/02/04/zaw-plugin</id>
         <content type="html"><![CDATA[<h3>What is zaw</h3>
 
 <p>Zaw is zsh plugin which acts like a widget to bring together a wealth of resources

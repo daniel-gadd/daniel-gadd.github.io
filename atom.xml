@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
     <title><![CDATA[Daniel Gadd]]></title>
-    <link href="http://daniel-gadd.github.io/atom.xml" rel="self"/>
-    <link href="http://daniel-gadd.github.io/"/>
-    <updated>2015-02-04T15:55:24+13:00</updated>
-    <id>http://daniel-gadd.github.io/</id>
+    <link href="http://www.gadd.co.nz/atom.xml" rel="self"/>
+    <link href="http://www.gadd.co.nz/"/>
+    <updated>2015-02-04T21:18:31+13:00</updated>
+    <id>http://www.gadd.co.nz/</id>
     <author>
         <name><![CDATA[Daniel Gadd]]></name>
         
@@ -15,9 +15,9 @@
     
     <entry>
         <title type="html"><![CDATA[Zaw Plugin]]></title>
-        <link href="http://daniel-gadd.github.io/blog/2015/02/04/zaw-plugin/"/>
+        <link href="http://www.gadd.co.nz/blog/2015/02/04/zaw-plugin/"/>
         <updated>2015-02-04T12:44:15+13:00</updated>
-        <id>http://daniel-gadd.github.io/blog/2015/02/04/zaw-plugin</id>
+        <id>http://www.gadd.co.nz/blog/2015/02/04/zaw-plugin</id>
         <content type="html"><![CDATA[<h3>What is zaw</h3>
 
 <p>Zaw is zsh plugin which acts like a widget to bring together a wealth of resources
@@ -105,9 +105,9 @@ which can make it bloated, slow and hard to get what you want fast.</p>
     
     <entry>
         <title type="html"><![CDATA[Notes on Octopress]]></title>
-        <link href="http://daniel-gadd.github.io/blog/2015/02/04/notes-on-octopress/"/>
+        <link href="http://www.gadd.co.nz/blog/2015/02/04/notes-on-octopress/"/>
         <updated>2015-02-04T11:10:31+13:00</updated>
-        <id>http://daniel-gadd.github.io/blog/2015/02/04/notes-on-octopress</id>
+        <id>http://www.gadd.co.nz/blog/2015/02/04/notes-on-octopress</id>
         <content type="html"><![CDATA[<p>Here are a few notes and code snippets I use to manage octopress, They arnt
 exactly new, just needed a place to put them incase I forget.</p>
 
@@ -140,9 +140,9 @@ exactly new, just needed a place to put them incase I forget.</p>
     
     <entry>
         <title type="html"><![CDATA[My First Post]]></title>
-        <link href="http://daniel-gadd.github.io/blog/2015/02/04/my-first-post/"/>
+        <link href="http://www.gadd.co.nz/blog/2015/02/04/my-first-post/"/>
         <updated>2015-02-04T08:49:04+13:00</updated>
-        <id>http://daniel-gadd.github.io/blog/2015/02/04/my-first-post</id>
+        <id>http://www.gadd.co.nz/blog/2015/02/04/my-first-post</id>
         <content type="html"><![CDATA[<p>This is my first blog post. Hopefully It wont be my last.</p>
 
 <p>I will hopefully use this blog to post useful information and stuff which i dont want to forget</p>

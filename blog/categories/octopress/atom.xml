@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
     <title><![CDATA[Category: octopress | Daniel Gadd]]></title>
-    <link href="http://daniel-gadd.github.io/blog/categories/octopress/atom.xml" rel="self"/>
-    <link href="http://daniel-gadd.github.io/"/>
-    <updated>2015-02-04T15:55:24+13:00</updated>
-    <id>http://daniel-gadd.github.io/</id>
+    <link href="http://www.gadd.co.nz/blog/categories/octopress/atom.xml" rel="self"/>
+    <link href="http://www.gadd.co.nz/"/>
+    <updated>2015-02-04T21:18:31+13:00</updated>
+    <id>http://www.gadd.co.nz/</id>
     <author>
         <name><![CDATA[Daniel Gadd]]></name>
         
@@ -15,9 +15,9 @@
     
     <entry>
         <title type="html"><![CDATA[Notes on Octopress]]></title>
-        <link href="http://daniel-gadd.github.io/blog/2015/02/04/notes-on-octopress/"/>
+        <link href="http://www.gadd.co.nz/blog/2015/02/04/notes-on-octopress/"/>
         <updated>2015-02-04T11:10:31+13:00</updated>
-        <id>http://daniel-gadd.github.io/blog/2015/02/04/notes-on-octopress</id>
+        <id>http://www.gadd.co.nz/blog/2015/02/04/notes-on-octopress</id>
         <content type="html"><![CDATA[<p>Here are a few notes and code snippets I use to manage octopress, They arnt
 exactly new, just needed a place to put them incase I forget.</p>
 
@@ -50,9 +50,9 @@ exactly new, just needed a place to put them incase I forget.</p>
     
     <entry>
         <title type="html"><![CDATA[My First Post]]></title>
-        <link href="http://daniel-gadd.github.io/blog/2015/02/04/my-first-post/"/>
+        <link href="http://www.gadd.co.nz/blog/2015/02/04/my-first-post/"/>
         <updated>2015-02-04T08:49:04+13:00</updated>
-        <id>http://daniel-gadd.github.io/blog/2015/02/04/my-first-post</id>
+        <id>http://www.gadd.co.nz/blog/2015/02/04/my-first-post</id>
         <content type="html"><![CDATA[<p>This is my first blog post. Hopefully It wont be my last.</p>
 
 <p>I will hopefully use this blog to post useful information and stuff which i dont want to forget</p>

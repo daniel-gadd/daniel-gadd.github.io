@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: http://daniel-gadd.github.io/sitemap.xml
+Sitemap: http://www.gadd.co.nz/sitemap.xml
