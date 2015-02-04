@@ -84,7 +84,7 @@ oscailte:
             app_id: # For enabling Open Graph metadata
         github:
             user: daniel-gadd
-            show_profile_link:
+            show_profile_link: true
         googleplus:
         hackernews:
         keybase:
@@ -105,10 +105,10 @@ oscailte:
 # ----------------------- #
 #
 # Github repositories
-github_user:
+github_user: daniel-gadd
 github_repo_count: 0
 github_show_profile_link: true
-github_skip_forks: true
+github_skip_forks: false
 
 # Twitter
 twitter_user:
