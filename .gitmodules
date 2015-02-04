@@ -1,0 +1,6 @@
+[submodule "_deploy"]
+	path = _deploy
+	url = git@github.com:daniel-gadd/daniel-gadd.github.io
+[submodule ".themes/oscailte"]
+	path = .themes/oscailte
+	url = https://github.com/coogie/oscailte.git
