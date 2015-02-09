@@ -18,8 +18,13 @@ Octopress is [Jekyll](https://github.com/mojombo/jekyll) blogging at its finest.
 
 **Note**: You will need rvm and ruby 2.1.5 installed for this to run (better)
 
-`git clone --recursive https://github.com/daniel-gadd/daniel-gadd.github.io`
+`git clone -b source https://github.com/daniel-gadd/daniel-gadd.github.io`
 
+`cd daniel-gadd.github.io`
+
+accept and run rvmrc
+
+`git clone -b master https://github.com/daniel-gadd/daniel-gadd.github.io ./_deploy`
 
 Enter the repo folder and accept the rvmrc file to initalise a rvm gemset and install gems with bundle install.
 
