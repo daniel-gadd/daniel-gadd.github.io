@@ -9,13 +9,13 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Category: zsh - Daniel Gadd</title>
+        <title>Cloning Your Octopress Blog - Daniel Gadd</title>
         <meta name="author" content="Daniel Gadd">
         
-        <meta name="description" content="Category: zsh">
+        <meta name="description" content="Cloning Your Octopress Blog Feb 10th, 2015 git octopress I&rsquo;ve spent hours and many &lsquo;dud&rsquo; commits to my github repository trying to &hellip;">
         
         <meta name="viewport" content="width=device-width">
-        <link rel="canonical" href="http://www.gadd.co.nz/blog/categories/zsh">
+        <link rel="canonical" href="http://www.gadd.co.nz/blog/2015/02/10/cloning-your-octopress-blog">
 
         <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic' rel='stylesheet' type='text/css'>
         <link href="http://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet" type="text/css">
@@ -76,65 +76,93 @@
                 
                 <div class="col-xs-12 col-sm-10 col-md-8 col-lg-8">
                 
-                    <article class="page">
-
+                    <article class="article article--single">
+    <header class="article__header">
     
-    <header>
-        <h1 class="page__title">
-            Category: Zsh
-        </h1>
-    </header>
-    <hr class="divider">
+        <h1 class="article__title">Cloning Your Octopress Blog</h1>
     
 
-    <div id="archive-list">
     
-        
-        
-            
-            <h2>2015</h2>
-        
-        <article class="article article--archive">
+        <div class="article__meta clearfix">
             
 
-<div class="row">
 
-    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-        <time class="article__date article__date--listing" datetime="2015-02-04T12:44:15+13:00" pubdate>
-            <span class='month'>Feb</span> <span class='day'>04</span>
-        </time>
-    </div>
-    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
-        <h1 class="article__title h3"><a href="/blog/2015/02/04/zaw-plugin/">Zaw Plugin</a></h1>
-        
-            <footer class="article__meta">
-                
+
+
+
+
+    <time class="article__date pull-left" datetime="2015-02-10T08:43:56+13:00" pubdate><i class="fa fa-calendar"></i> Feb 10th, 2015</time>
+
+
+
+
+            
 
     <div class="article__tags pull-left">
         <i class="fa fa-tags"></i>
         <ul class="unstyled">
         
+
             
-                <li><a class='category' href='/blog/categories/zsh/'>zsh</a></li>
+                <li><a class='category' href='/blog/categories/git/'>git</a></li>
             
+                <li><a class='category' href='/blog/categories/octopress/'>octopress</a></li>
             
+        
         </ul>
     </div>
 
 
-            </footer>
-        
-        <hr class="divider">
-    </div>
-
-</div>
-
-        </article>
+            
+        </div>
     
-</div>
+</header>
+
+
+
+
+    <p>I&rsquo;ve spent hours and many &lsquo;dud&rsquo; commits to my github repository trying to figure
+out too re-clone my octopress repository to either my current development
+computer, or too another one. I have found one working solution.</p>
+
+<!--more-->
+
+
+<p><strong>Attempt 1: Straight Clone: Failed</strong> - Dont clone only the master branch as this
+only contains your site static code and not the development branch.</p>
+
+<p><strong>Attempt 2: Clone source branch: Failed</strong> - I have the correct source but no
+static content on the master branch.</p>
+
+<p><strong>Attempt 3: Git Submodules: Failed</strong> - Dont use submodules to manage the master
+branch - They&rsquo;ll give you a world of hurt and constant commit hash errors when
+you deploy your site with changes.</p>
+
+<p><strong>Attempt 4: Clone into _deploy: Sucess!</strong> - This works a treat as I realised
+<code>_deploy</code> is in the default <code>.gitignore</code> file of octopress. So it wont error on
+changes or be commited up when you push the source branch.</p>
+
+<p><strong>How I Got There:</strong></p>
+
+<ol>
+<li><code>git clone -b source https://github.com/daniel-gadd/daniel-gadd.github.io</code></li></li>
+<li><code>cd daniel-gadd.github.io</code></li></li>
+<li>Accept <code>.rvmrc</code>, allowing rvm to create a gemset and bundler install to the gems</li></li>
+<li><code>git clone -b master https://github.com/daniel-gadd/daniel-gadd.github.io ./_deploy</code></li></li>
+</ol>
+
+
+<p>Thats it!</p>
+
+<p>You dont need to re-set up the github pages configuration as this is already setup in the gitrepo</p>
+
+<p><strong>NB:</strong> Remember to push both your source and master branches after each change, if your working on two computers, your local repos can get out of sync badly requiring some rebasing and merging.</p>
+
 
 
 </article>
+
+
 
                 </div>
 

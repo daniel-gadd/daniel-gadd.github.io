@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-    <title><![CDATA[Category: octopress | Daniel Gadd]]></title>
-    <link href="http://www.gadd.co.nz/blog/categories/octopress/atom.xml" rel="self"/>
+    <title><![CDATA[Category: git | Daniel Gadd]]></title>
+    <link href="http://www.gadd.co.nz/blog/categories/git/atom.xml" rel="self"/>
     <link href="http://www.gadd.co.nz/"/>
     <updated>2015-02-10T09:08:02+13:00</updated>
     <id>http://www.gadd.co.nz/</id>
@@ -54,52 +54,6 @@ changes or be commited up when you push the source branch.</p>
 <p>You dont need to re-set up the github pages configuration as this is already setup in the gitrepo</p>
 
 <p><strong>NB:</strong> Remember to push both your source and master branches after each change, if your working on two computers, your local repos can get out of sync badly requiring some rebasing and merging.</p>
-]]></content>
-    </entry>
-    
-    <entry>
-        <title type="html"><![CDATA[Notes on Octopress]]></title>
-        <link href="http://www.gadd.co.nz/blog/2015/02/04/notes-on-octopress/"/>
-        <updated>2015-02-04T11:10:31+13:00</updated>
-        <id>http://www.gadd.co.nz/blog/2015/02/04/notes-on-octopress</id>
-        <content type="html"><![CDATA[<p>Here are a few notes and code snippets I use to manage octopress, They arnt
-exactly new, just needed a place to put them incase I forget.</p>
-
-<!-- more -->
-
-
-<p><strong>Create A new blog entry:</strong></p>
-
-<p><code>rake new_post["My Post Name Here"]</code></p>
-
-<p><strong>Preview my development code locally:</strong></p>
-
-<p><code>rake preview</code></p>
-
-<p><strong>Generate public code ready to deploy:</strong></p>
-
-<p><code>rake generate</code></p>
-
-<p><strong>Deploy my code to github:</strong></p>
-
-<p><code>rake deploy</code></p>
-
-<p><strong>Push my source code up to the source branch:</strong></p>
-
-<p><code>git push origin source</code></p>
-
-<p>Ill add to these as I see fit or incase i need more commands to jog my memory.</p>
-]]></content>
-    </entry>
-    
-    <entry>
-        <title type="html"><![CDATA[My First Post]]></title>
-        <link href="http://www.gadd.co.nz/blog/2015/02/04/my-first-post/"/>
-        <updated>2015-02-04T08:49:04+13:00</updated>
-        <id>http://www.gadd.co.nz/blog/2015/02/04/my-first-post</id>
-        <content type="html"><![CDATA[<p>This is my first blog post. Hopefully It wont be my last.</p>
-
-<p>I will hopefully use this blog to post useful information and stuff which i dont want to forget</p>
 ]]></content>
     </entry>
     
