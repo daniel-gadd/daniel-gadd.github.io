@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/daniel-gadd/daniel-gadd.github.io.svg?branch=source)](https://travis-ci.org/daniel-gadd/daniel-gadd.github.io)
+
 ## Octopress 3.0
 
 Note: Octopress 3.0 is in development at https://github.com/octopress/octopress
