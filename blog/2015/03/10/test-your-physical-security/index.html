@@ -9,13 +9,14 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>My First Post - Daniel Gadd</title>
+        <title>Have you checked your security? - Daniel Gadd</title>
         <meta name="author" content="Daniel Gadd">
         
-        <meta name="description" content="My First Post Feb 4th, 2015 octopress This is my first blog post. Hopefully It wont be my last. I will hopefully use this blog to post useful &hellip;">
+        <meta name="description" content="Have you checked your security? Mar 10th, 2015 pentest security We all have a fancy expensive alarm system in our work places, some more fancy
+then &hellip;">
         
         <meta name="viewport" content="width=device-width">
-        <link rel="canonical" href="http://www.gadd.co.nz/blog/2015/02/04/my-first-post">
+        <link rel="canonical" href="http://www.gadd.co.nz/blog/2015/03/10/test-your-physical-security">
 
         <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic' rel='stylesheet' type='text/css'>
         <link href="http://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet" type="text/css">
@@ -79,7 +80,7 @@
                     <article class="article article--single">
     <header class="article__header">
     
-        <h1 class="article__title">My First Post</h1>
+        <h1 class="article__title">Have you checked your security?</h1>
     
 
     
@@ -91,7 +92,7 @@
 
 
 
-    <time class="article__date pull-left" datetime="2015-02-04T08:49:04+13:00" pubdate><i class="fa fa-calendar"></i> Feb 4th, 2015</time>
+    <time class="article__date pull-left" datetime="2015-03-10T09:36:22+13:00" pubdate><i class="fa fa-calendar"></i> Mar 10th, 2015</time>
 
 
 
@@ -104,7 +105,9 @@
         
 
             
-                <li><a class='category' href='/blog/categories/octopress/'>octopress</a></li>
+                <li><a class='category' href='/blog/categories/pentest/'>pentest</a></li>
+            
+                <li><a class='category' href='/blog/categories/security/'>security</a></li>
             
         
         </ul>
@@ -119,9 +122,102 @@
 
 
 
-    <p>This is my first blog post. Hopefully It wont be my last.</p>
+    <p>We all have a fancy expensive alarm system in our work places, some more fancy
+then others; motion sensors, cameras, biometrics, door bolts.
+But have you ever actually tested it?</p>
 
-<p>I will hopefully use this blog to post useful information and stuff which i dont want to forget</p>
+<p>No, I don&rsquo;t mean the odd &ldquo;I came into work on the weekend and set it off&rdquo; excuse
+given by staff who say &ldquo;Well it definitely worked&rdquo;. I mean testing the physical
+security of your system as a burglar hoping to steal your sensitive financial and
+company documents.</p>
+
+<p>It&rsquo;s not something we think of when it comes to security, sure we get our
+networks, web applications and business processes audited and tested by
+auditors and ethical penetration testing consultants, but the physical alarm system
+is never &ldquo;physically&rdquo; tested - we get it installed and take the installers word
+that, &ldquo;Your all protected now&rdquo;, and for some reason, that&rsquo;s enough to keep our
+worries at bay. Imagine if your developers say, &ldquo;Oh yeah, our new Credit Card
+database is all protected&rdquo; and you left it at that, our world would be a VERY
+different place.</p>
+
+<p>When it comes to testing your physical security, it&rsquo;s not recommended to just
+&ldquo;go for it&rdquo; (Did someone say hack on prod?). You might find your staff, and
+building neighbours may not appreciate it.
+You need to create a test environment which is a copy of your real alarm, and
+now, I don&rsquo;t mean go buy a whole new system just for testing, instead consult your alarm
+security contractors about creating a test zone which acts like the main
+system.</p>
+
+<p>Next, identify potential targets such as financial documents, important servers
+or anything business critical. These should be targets which would be of interest
+to anyone breaking in, whether they have insider knowledge or not. These targets
+should be what you concentrate on &ldquo;testing&rdquo; and in future require careful planning
+and protecting.</p>
+
+<p>Finally, inform your monitoring company, who wants Mr Plod showing up to your
+building as you attempt to break in? At least you could always try the &ldquo;I
+Locked my keys inside&rdquo; excuse and see how that fly&rsquo;s&hellip;</p>
+
+<p>Now you have set yourself up, think up some creative ways to &ldquo;break in&rdquo;,
+have a look around your offices; are the doors secure;
+can you climb the walls; can you move undetected from motion sensors?
+I Find Google has the best ideas and solutions to problems you might overcome
+when trying to bypass a motion sensor.</p>
+
+<p>A few simple words of advice:</p>
+
+<ol>
+<li><p>Be safe, you could find yourself dropping from
+heights or doing something physically demanding, always have a look at whats
+load bearing and stable.</p></li>
+<li><p>Watch out for fire alarm cables. Sometimes you can&rsquo;t make a test environment
+for everything. There&rsquo;s nothing worse than an expensive false callout fee (or
+two) and even worse, setting the sprinklers off all over your perfectly
+good not-on-fire office assets. - Your insurance company may not like you
+very much.</p></li>
+<li><p>Go slow and take your time. Your here to test, it&rsquo;s not a time trial. I&rsquo;ve
+never heard of a criminal who stated his break-in was timed. You&rsquo;re in
+control, take your time, look at everything, explore routes etc. If you set
+off your test alarm. reset it and start again.</p></li>
+<li><p>Don&rsquo;t break anything. This could be dangerous and costly to you and your
+business, theres nothing worse than breaking your managers&#8217; new expensive oak
+desk by stepping in the wrong place.</p></li>
+</ol>
+
+
+<p>You now have a repeatable test environment, which can be used to test your
+physical security, over and over again. If you make changes or add new security
+devices, simply update your test environment and have a go.</p>
+
+<p>We recently underwent this process when a co-worker researching RFID swipe
+cards managed to clone our access cards, rendering them unsecure, because of
+this we started exploring what would happen if someone entered our building.
+What can they do and, what could they take?</p>
+
+<p>With that, we closed our office, set up a test alarm area, disabled the ear
+piercing siren and told our monitoring company to ignore everything and played
+a simple Capture the Flag game where we all took turns breaking in.</p>
+
+<p>Unfortunately the results were not what we thought, it was somewhat easier then
+we expected. We had people record pin numbers, climb walls, break tiles and
+leave dirty shoe marks on our walls - All in an attempt to grab a nice cold
+alcoholic beverage from our &ldquo;secure&rdquo; area.</p>
+
+<p>This exercise was a wakeup call and allowed us to see what flaws we have,
+instead of letting a security installer tell us it&rsquo;s all OK.</p>
+
+<p>So, in conclusion, here are some helpful tips to avoid problems:</p>
+
+<ul>
+  <li>Always be safe!</li>
+  <li>Create a dummy test zone which mirrors your usual alarm area/s.</li>
+  <li>Look out of fire alarm cables, fire engine callouts are not cheap.</li>
+  <li>Tell your monitoring company to ignore anything they receive.</li>
+  <li>Create goals for your testers.</li>
+  <li>Play it slow and safe, if something&#8217;s not right, stop and have a look.</li>
+  <li>And finally&#8230; Have Fun!</li>
+</ul>
+
 
 
 
