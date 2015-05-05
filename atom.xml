@@ -4,7 +4,7 @@
     <title><![CDATA[Daniel Gadd]]></title>
     <link href="http://www.gadd.co.nz/atom.xml" rel="self"/>
     <link href="http://www.gadd.co.nz/"/>
-    <updated>2015-05-05T20:41:34+12:00</updated>
+    <updated>2015-05-06T09:34:01+12:00</updated>
     <id>http://www.gadd.co.nz/</id>
     <author>
         <name><![CDATA[Daniel Gadd]]></name>
@@ -152,31 +152,41 @@ I guess as long as I call ssh after an update, all will be good.</p>
         <link href="http://www.gadd.co.nz/blog/2015/03/10/test-your-physical-security/"/>
         <updated>2015-03-10T09:36:22+13:00</updated>
         <id>http://www.gadd.co.nz/blog/2015/03/10/test-your-physical-security</id>
-        <content type="html"><![CDATA[<p>We all have a fancy expensive alarm system in our work places, some more fancy
-then others; motion sensors, cameras, biometrics, door bolts.
-But have you ever actually tested it?</p>
+        <content type="html"><![CDATA[<p><strong>Disclaimer: I take NO responsbility for personal or business damages and/or
+technical alarm issues as a result of you following my blog post.</strong></p>
+
+<p>Formalities out of the way &hellip;</p>
+
+<p>We all have a fancy expensive alarm system in our work places, some more fancy
+then others; motion sensors, cameras, biometrics, door bolts, lets face it, theres
+alot of stuff here&hellip; But have you ever actually tested it?</p>
+
+<!--more-->
+
 
 <p>No, I don&rsquo;t mean the odd &ldquo;I came into work on the weekend and set it off&rdquo; excuse
 given by staff who say &ldquo;Well it definitely worked&rdquo;. I mean testing the physical
-security of your system as a burglar hoping to steal your sensitive financial and
+security of your system as a burglar hoping to actually steal your sensitive financial and
 company documents.</p>
 
 <p>It&rsquo;s not something we think of when it comes to security, sure we get our
 networks, web applications and business processes audited and tested by
 auditors and ethical penetration testing consultants, but the physical alarm system
-is never &ldquo;physically&rdquo; tested - we get it installed and take the installers word
+is never &ldquo;physically&rdquo; tested - We get it installed and take the installers word
 that, &ldquo;Your all protected now&rdquo;, and for some reason, that&rsquo;s enough to keep our
-worries at bay. Imagine if your developers say, &ldquo;Oh yeah, our new Credit Card
+worries at bay.
+Imagine if your developers say, &ldquo;Oh yeah, our new Credit Card
 database is all protected&rdquo; and you left it at that, our world would be a VERY
 different place.</p>
 
 <p>When it comes to testing your physical security, it&rsquo;s not recommended to just
 &ldquo;go for it&rdquo; (Did someone say hack on prod?). You might find your staff, and
 building neighbours may not appreciate it.
-You need to create a test environment which is a copy of your real alarm, and
+You need to create (setup) a test environment which is a copy of your real alarm, and
 now, I don&rsquo;t mean go buy a whole new system just for testing, instead consult your alarm
-security contractors about creating a test zone which acts like the main
-system.</p>
+security contractors about creating a test zone to act like the main system. - Unless of
+course your one of these DIY &ldquo;she&rsquo;ll be right&rdquo; kinda guys who thinks they have the skill to
+program it, them go right ahead.</p>
 
 <p>Next, identify potential targets such as financial documents, important servers
 or anything business critical. These should be targets which would be of interest
@@ -184,13 +194,14 @@ to anyone breaking in, whether they have insider knowledge or not. These targets
 should be what you concentrate on &ldquo;testing&rdquo; and in future require careful planning
 and protecting.</p>
 
-<p>Finally, inform your monitoring company, who wants Mr Plod showing up to your
+<p>Finally, inform your monitoring company of your actions, or tell
+them to ignore any alerts they recieve while you &ldquo;test&rdquo;. Who wants Mr Plod showing up to your
 building as you attempt to break in? At least you could always try the &ldquo;I
 Locked my keys inside&rdquo; excuse and see how that fly&rsquo;s&hellip;</p>
 
 <p>Now you have set yourself up, think up some creative ways to &ldquo;break in&rdquo;,
 have a look around your offices; are the doors secure;
-can you climb the walls; can you move undetected from motion sensors?
+can you climb the walls; can you move undetected from motion sensors? Cameras? etc, etc&hellip;
 I Find Google has the best ideas and solutions to problems you might overcome
 when trying to bypass a motion sensor.</p>
 
@@ -236,7 +247,13 @@ alcoholic beverage from our &ldquo;secure&rdquo; area.</p>
 <p>This exercise was a wakeup call and allowed us to see what flaws we have,
 instead of letting a security installer tell us it&rsquo;s all OK.</p>
 
-<p>So, in conclusion, here are some helpful tips to avoid problems:</p>
+<p>I Recommend that every business should actively test their phyiscal security, wheither you yourself
+or an independent contractor do it. This should be annaully, or when things change in the business.</p>
+
+<p>Lets face it, its better you find your security holes before a would-be criminal does, so you can
+fix them before it&rsquo;s too late.</p>
+
+<p>So, in conclusion, here is my helpful advice again to avoid problems:</p>
 
 <ul>
   <li>Always be safe!</li>
