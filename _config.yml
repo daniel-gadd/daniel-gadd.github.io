@@ -75,7 +75,7 @@ oscailte:
         message: "Available for new opportunities"
     social:
         visible: true
-        title: My Social Networks
+        title: # Defaults to "Follow me!" if not present
         adn: # App.net
         coinbase: danielgadd
         dribbble:
