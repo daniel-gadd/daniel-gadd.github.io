@@ -9,18 +9,18 @@ categories:
  - configuration
 ---
 
-### Prerequisite:
-For this setup im using zsh with aliases, but bash will also work.
-
-
-### My ssh config setup
 My ~./.ssh/config file was getting rather large and becoming a management nightmare. I have personal servers, work specific servers, domain wildcards
 global wildcards etc etc. I'd estimate I had close to 30 hosts in a single file.
 
 I decided It would be better to split my master config out into smaller logical chunks and concatinate them all together everytime I call the 'ssh' command.
 This means I can easily find and logically order my Hosts in A way which works for me.
 
+<!--more-->
+
 #### How does it work
+---
+Since ssh-client doesnt support an `include` style parameter in its .ssh/config file, i decided to create my own implimentation.
+
 I split my configuration file into 4 logical chunks (there are more, but they're business sensitive - but 4 will give you an idea):
 
 {% codeblock %}
@@ -31,9 +31,14 @@ cat ~/.ssh/conf.d/
    400-global
 {% endcodeblock %}
 
-As you can see, ive used numbering to create an order in assending order. Applying the header first and finally the global config which holds the `Host *` config which get applied to everything, unless its been specified further up.
+<br>
 
-My ssh alias command calls 'cat', removes some vim comments to enable syntax highlighting and finally throws the generated file into ~/.ssh/config. Finally I call the 'ssh' command.
+As you can see, ive used numbering to create an order in assending order. Applying the header first and finally the global config which holds the `Host *` config which get applied to everything, unless its been specified further up.
+Anything can go in the middle, or example I have chunk for only my personal servers and another one for work, effectively splitting them up.
+
+You could use any logical arrangement here, location, IP address, server names etc. Allowing you to get granular if you wanted.
+
+My ssh alias command calls `cat \*` across my ~/.ssh/conf.d/ folder; removes some vim comments to enable syntax highlighting; throws the generated file into ~/.ssh/config and Finally calls the 'ssh' command.
 
 Heres what my zsh command alias looks like:
 
@@ -45,7 +50,9 @@ alias ssh="cat ~/.ssh/conf.d/\* |
 
 *Note: I added newlines to the code snippet so it was readable.*
 
-### What my Host blocks look like
+####What my Host blocks look like:
+---
+<br>
 
 #####Heres my header file:
 
@@ -59,7 +66,9 @@ alias ssh="cat ~/.ssh/conf.d/\* |
 \# See ~/.ssh/conf.d/README.md for instructions
 {% endcodeblock %}
 
-##### global host configuration:
+<br>
+
+#####Global host configuration:
 
 
 {% codeblock %}
@@ -88,14 +97,18 @@ Host *
 ##################################################################
 {% endcodeblock %}
 
+<br>
+A quick note on my global config above, i do use control multiplexers, they're not for everyone and if you don't fully understand how they work, they can be quite painful to deal with. Instead of talking about ssh multiplexing, have a read of [this](http://blog.endpoint.com/2010/09/long-lasting-ssh-multiplexing-made.html) blog post.
+I also specify a subset of secure Key Exchange and Host Key algorithms as by default there are some very insure ciphers enabled by default. Have a read of [this](https://stribika.github.io/2015/01/04/secure-secure-shell.html) blog post which explains secure vs insecure ciphers and how to enable them serverside/clientside. - Note not all sshd servers and versions support the above ciphers and some, *github* will need to specify some insecure ciphers in its host block.
 
 I hope this post has been useful to someone and thought I'd share my setup.
 
-### In Summary
+#### In Summary
+---
 Yes theres most likely a better implimentation and yes you might see it as rough, but its a good start and good foundation to work from to make it better.
 
 I'm still perfecting my ssh config setup and yet to run into any limitations or issues
 (one issue im sure i'll encounter is rsync and scp as they wont update the config if they are called.
-I guess as long as I call ssh after an update, all will be good.
+I guess as long as I call ssh after an update, all will be good. - Im not planning on updating my config "that" often.
 
 I'll update here as I make better changes.
