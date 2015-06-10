@@ -1,0 +1,73 @@
+==================================================================
+https://keybase.io/danielgadd
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://www.gadd.co.nz
+  * I am danielgadd (https://keybase.io/danielgadd) on keybase.
+  * I have a public key with fingerprint A64B 29F1 E7DC BE88 97C0  9F11 22C8 F42E 0632 B31C
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "a64b29f1e7dcbe8897c09f1122c8f42e0632b31c",
+            "host": "keybase.io",
+            "key_id": "22c8f42e0632b31c",
+            "kid": "0101cbc6f5a801c172b90ed4ccafb5d5f4ca6910c912533ecdbfa6d401f3bed102870a",
+            "uid": "ab338652c40a96deb79e22cbae363219",
+            "username": "danielgadd"
+        },
+        "service": {
+            "hostname": "www.gadd.co.nz",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1433969420,
+    "expire_in": 157680000,
+    "prev": "c6b849e4e2c2170b633d82efa4a8c3e7cfc4028e9519278332bf168349999096",
+    "seqno": 3,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v1
+
+owFtUmtMFFcUHkBbWXwQFNLUIO2EWspjO6+dnVmQArugYgVBbNygbOZxZxmRmenO
+wIKK1QYwrW0lGiFtNRG1AdMWaCgPaQjQUBEEIailKo2mau3SUmpjKZiqvUvsv54/
+955zvu879zu5NcuCEFPASwdv5Y1NTnYFXPLxyLayM/RelFfFctS2Fy0CC4ckK27g
+0TyyYqA2lKMpnmAlHFhFgQcMw1oFDKY4QQiMRBEAo0mCJ3EBjUcLVd3PgDI8pwOz
+rMIaTFyyCKv/gy9aaGA4hgu8QEsWjoE33ErwLAZEShA4ibeIFokSOJrFMYHFCQtJ
+AkHkJY4WKQyXSB6IOEYwVoyDciULchxPkgxtIQQK41haBLyVBXA2zwESTsZZP1AH
+HoUrBhAtcooMdrs5UUQr4lFYL5UF4F+C38szjNfrNfsRZkE1K3sgX/Oohiqou2Gv
+0DA03ebnGuXaAhjwrmcyLl5WRLhLyCgFHl1WFdSGQ6RgyH5dnCJJlmYpAotHQZkm
+e4BL9iMsVprBYPjngFIoKdA8Q7GAAoRA4FaMp0lSZAggcRTHCCSwChL0SjCAteAs
+YWVIuF8JpxmSYmFgLI36jb2tqKiNhM/k3FBSl90KZzxX4gFohem9wH2LkAATIi0O
+9P8H16oDCAwzEiPregnwJEiaJ0VRDc6ADnSzqgFFc2tmSZaMwkLVo4NiTjErwKBp
+K5NK2tMcOGuhMSzdmkoSaQ4LS2AM7siwUA7MYXfY01IRU3Dof5+wq3XFE+xiSnTu
+xPi6tk32ufnRz5u3LApWNS7y1/eX+17ccN9VfPzr3Mz5Dvb2TODQoY31tdebPhwv
+bpj805e99ez5bKQ4InNv3T+k783MyqPHLgws/QKkBM3eUUfoNz6LHuU6n6xx/Xg3
+6k7k1FCopWbtid8q54aWbawOenwp9Ep3xUVXZ9L5WHIwT/NI8eIByRxemvPOjUZb
+YF9V5Bqlrf3C/rCCxImRmG+qMpyd9U1FN73KjaiIpu+35c4e6hYHHdOvtPVFbsp/
+LShNTBqn2nJajz2MtV8eCznZiHT0bwpn6zPjQvPvnvp9SfXYce/jq7ntyNxKLf1q
+nRa3Yn6aCrk98m1iV2fE36+Pdfx1OrllyvZz89qOkg1zFelh6d0H2xtP3ooa8XXY
+e/5oiFr3yfP7jNtTzs0nvwzurUYbMlunZhpOTBLh7pzyxuQH9+Jqe3Y4idOj09dq
+H60qC94Z/XRL8k29DXk5uajlmnPo3ZjegXMPfP2nspJMS2azD6c/LNj+SEmo7szL
+WH89rv2tezPNdTuHvfZPQ3r6kPzoy1tT96/XP25ZnYBv33NrYnH/dEpVU5ivuybr
+yvI+7w+7wJknde7U+yGHV4KnzUU3Pb07BudiKnLO/tSTdaTPiWjds6av6naZ+ufz
+Xt2M6R9UDpd9tK/AOTRcdjR26XcvxAlHVjvGftEHBhJDzrU44/4F
+=E7aU
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/danielgadd
+
+==================================================================
