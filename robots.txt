@@ -1,4 +1,0 @@
-User-agent: *
-Disallow:
-
-Sitemap: http://www.gadd.co.nz/sitemap.xml

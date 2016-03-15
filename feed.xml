@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<channel>
+		<title>{ Daniel Gadd }</title>
+		<description>Blog and website of Daniel Gadd, blogging mainly for tech. Opinions expressed are mine.</description>
+		<link>https://gadd.co.nz</link>
+		<atom:link href="https://gadd.co.nz/feed.xml" rel="self" type="application/rss+xml" />
+		
+			<item>
+				<title>Update CloudFlare DDNS with systemd timers</title>
+				
+				
+					<description>&lt;h2 id=&quot;cloudflare-as-a-dyanmic-dns-provider&quot;&gt;CloudFlare As a Dyanmic DNS provider&lt;/h2&gt;
+
+</description>
+				
+				<pubDate>Wed, 13 Jan 2016 12:44:15 +1300</pubDate>
+				<link>https://gadd.co.nz/configuration/2016/01/13/CfDDNS-with-systemd.html</link>
+				<guid isPermaLink="true">https://gadd.co.nz/configuration/2016/01/13/CfDDNS-with-systemd.html</guid>
+			</item>
+		
+			<item>
+				<title>Why Arch Linux?</title>
+				
+				
+					<description>&lt;p&gt;I have been a Linux user for some time, with vast knowledge in Debian based systems. My OS of choice before Arch was Ubuntu. This served as a great learning environment, but often found the release cycle and
+locked package versions a pain… As a IT professional I like tinkering and playing with new features. Ubuntu just wasnt cutting it for me… Always doing a release upgrade every 6 months was getting old.&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Fri, 08 Jan 2016 00:00:00 +1300</pubDate>
+				<link>https://gadd.co.nz/linux/2016/01/08/why-arch-linux.html</link>
+				<guid isPermaLink="true">https://gadd.co.nz/linux/2016/01/08/why-arch-linux.html</guid>
+			</item>
+		
+			<item>
+				<title>Part 1: Install Arch Linux on a Retina MacBook Pro</title>
+				
+				
+					<description>&lt;hr&gt;
+&lt;h2&gt;Purpose of this post&lt;/h2&gt;</description>
+				
+				<pubDate>Fri, 08 Jan 2016 00:00:00 +1300</pubDate>
+				<link>https://gadd.co.nz/linux/2016/01/08/install-arch-on-macbookpro.html</link>
+				<guid isPermaLink="true">https://gadd.co.nz/linux/2016/01/08/install-arch-on-macbookpro.html</guid>
+			</item>
+		
+			<item>
+				<title>Better management of ssh config files</title>
+				
+				
+					<description>&lt;p&gt;My ~./.ssh/config file was getting rather large and becoming a management nightmare. I have personal servers, work specific servers, domain wildcards
+global wildcards etc etc. I’d estimate I had close to 30 hosts in a single file.&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Tue, 05 May 2015 19:54:19 +1200</pubDate>
+				<link>https://gadd.co.nz/ssh/2015/05/05/better-management-of-ssh-config-files.html</link>
+				<guid isPermaLink="true">https://gadd.co.nz/ssh/2015/05/05/better-management-of-ssh-config-files.html</guid>
+			</item>
+		
+			<item>
+				<title>Have you checked your security?</title>
+				
+				
+					<description>&lt;p&gt;&lt;strong&gt;Disclaimer: I take NO responsbility for personal or business damages and/or
+technical alarm issues as a result of you following my blog post.&lt;/strong&gt;&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Tue, 10 Mar 2015 09:36:22 +1300</pubDate>
+				<link>https://gadd.co.nz/security/2015/03/10/test-your-physical-security.html</link>
+				<guid isPermaLink="true">https://gadd.co.nz/security/2015/03/10/test-your-physical-security.html</guid>
+			</item>
+		
+			<item>
+				<title>Zaw Plugin</title>
+				
+				
+					<description>&lt;h3 id=&quot;what-is-zaw&quot;&gt;What is zaw&lt;/h3&gt;
+
+</description>
+				
+				<pubDate>Wed, 04 Feb 2015 12:44:15 +1300</pubDate>
+				<link>https://gadd.co.nz/dotfiles/2015/02/04/zaw-plugin.html</link>
+				<guid isPermaLink="true">https://gadd.co.nz/dotfiles/2015/02/04/zaw-plugin.html</guid>
+			</item>
+		
+	</channel>
+</rss>

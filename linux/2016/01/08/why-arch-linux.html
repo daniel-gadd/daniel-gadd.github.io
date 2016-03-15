@@ -1,5 +1,5 @@
 
-<!-- Index Layout Start -->
+<!-- Post Layout Start -->
 
 
 
@@ -17,16 +17,14 @@
   <meta name="description" content="Blog and website of Daniel Gadd, blogging mainly for tech. Opinions expressed are mine.">
   <meta name="author" content="Daniel Gadd">
   <meta name="keywords" content="">
-  <link rel="canonical" href="/">
-  <title>{ Daniel Gadd } </title>
+  <link rel="canonical" href="/linux/2016/01/08/why-arch-linux.html">
+  <title>{ Daniel Gadd }  | Why Arch Linux?</title>
 
   <!-- Bootstrap Core CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
   <!-- Custom CSS -->
   <link href="/css/grayscale.css" rel="stylesheet">
-  
-  <link href="/css/timeline.css" rel="stylesheet">
   
 
   
@@ -71,6 +69,12 @@
   
 
 
+  <!-- Syntax highlight in post pages -->
+
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/monokai_sublime.min.css">
+
+
+
 
 
 
@@ -89,7 +93,7 @@
         <i class="fa fa-bars"></i>
       </button>
       
-        <a class="navbar-brand page-scroll" href="#page-top">
+        <a class="navbar-brand" href="/">
       
           <div>
             
@@ -103,22 +107,28 @@
     <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
       <ul class="nav navbar-nav">
         
-
-          <!-- Scroll to section for each page in index -->
+          <!-- Blog, Post, Tag and Error pages -->
           
             <li>
-              <a class="page-scroll" href="#about"> About </a>
+            
+                <a href="/#about"> About </a>
+            
             </li>
           
             <li>
-              <a class="page-scroll" href="#latest-post"> Blog </a>
+            
+              
+                <a href="/blog/"> Blog </a>
+              
+            
             </li>
           
             <li>
-              <a class="page-scroll" href="#contact"> Contact </a>
+            
+                <a href="/#contact"> Contact </a>
+            
             </li>
           
-
         
       </ul>
     </div>
@@ -128,159 +138,84 @@
 <!-- Navigation End -->
 
 
-    
+    <section id="post" class="container content-section text-left">
+      <div class="row">
+        <div class="col-md-100">
 
-    
-      
-        
-      
-        
           
-<!-- About Start -->
+<!-- Swipe Instructions Start -->
 
-<section id="about" class="container content-section text-center">
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1">
-      <h2 id="about">About</h2>
-
-<p>Hello! I’m Daniel Gadd from Wellington New Zealand. I am an Infrastructure and DevOps skilled person who loves doing what I do. I have skills in Networking concepts, Linux administration, Juniper and cisco networking, virtualisation with KVM, cloud IAAS, Configuration management with puppet, devOps tools like git, jenkins, and CD/CI workflows</p>
-
-<p>This is a small blog site built on jekyll with mostly reminders of how I did things, or why I did, hopefully you will find something helpful.</p>
-
-<p><small>
-Don’t forget to check out my contact page if you want to get in touch
-</small></p>
-
-    </div>
+<div id="swipe-instruction">
+  <div>
+    <p><br><br><br></p>
+    <i id="hand-swipe" class="fa fa-hand-o-up"></i>
+    <p><strong>
+    
+      Did you know that you can navigate the posts by swiping left and right?
+    
+    </strong></p>
+    <button type="button" class="btn btn-default ok-btn close-swipe-instruction">
+      
+        Awesome!
+      
+    </button>
   </div>
-</section>
+</div>
 
-<!-- About End -->
+<!-- Swipe Instructions End -->
 
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
+
+          <h1><strong>Why Arch Linux?</strong></h1>
+          <h4>
+<strong>08 Jan 2016</strong>
+            <small> . linux . <a href="/linux/2016/01/08/why-arch-linux.html#disqus_thread">Comments</a>
+            
+            </small>
+          </h4>
+
+          <p>I have been a Linux user for some time, with vast knowledge in Debian based systems. My OS of choice before Arch was Ubuntu. This served as a great learning environment, but often found the release cycle and
+locked package versions a pain… As a IT professional I like tinkering and playing with new features. Ubuntu just wasnt cutting it for me… Always doing a release upgrade every 6 months was getting old.</p>
+
+<p>So I choose Arch linux as a new project, The reason I picked Arch over others is:</p>
+
+<h4 id="section">1</h4>
+<p>Rolling release cycle - no more release upgrades, just the latest packages, all the time.</p>
+
+<h4 id="section-1">2</h4>
+<p>No Setup GUI - I actually had a learn how to install Linux Including Partitioning, LUKS, bootloader, xorg, drivers etc - And this meant I could set it up how I wanted, if I want BTRFS over LUKS, I can do that, or If I want wnt to install wayland instead of x11, I can also do that.</p>
+
+<h4 id="section-2">3</h4>
+<p>Huge community support and very informative wiki pages. The Wiki and forums and amazing and very well written, I found myself in the wiki almost everytime I needed to learn something. They were actually written well, not just a “run this command” style, but included definitions. I also found the Arch IRC channel useful also.</p>
+
+<h4 id="section-3">4</h4>
+<p>You get a clean slate after the install - When you install you get nothing, and I mean nothing, no GUI, no applications (execpt some base stuff) and nothing “preconfigured”. I got to install what I wanted and where I wanted, no bloatware or unrequired services.</p>
+
+<p>Arch has been a great experience for me and am learning new stuff every day. Anyone interested how to install Linux should have a go, or at least read up on the installation process. If you have no Interest in Arch, The Wiki is still very relivant for learning and even applying the knowledge to Debian or other OS distrubutions.</p>
+
+
+          
+<!-- Share Buttons Start -->
+<div>
+  <ul class="rrssb-buttons clearfix">
     
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-          
-<!-- Latest Post Preview Start -->
-
-<section id="latest-post" class="container content-section text-center">
-    <div class="row">
-      <div class="col-md-10 col-md-offset-1">
-
-        <h2 id="blog">Blog</h2>
-
-
-        
-        <h4> <strong> 13 Jan 2016 </strong>
-          <small>. configuration .</small>
-          <strong> <a href="/configuration/2016/01/13/CfDDNS-with-systemd.html">Update CloudFlare DDNS with systemd timers </a> </strong>
-          <small> <a href="/configuration/2016/01/13/CfDDNS-with-systemd.html#disqus_thread">Comments</a></small>
-        </h4>
-
-        <p>CloudFlare As a Dyanmic DNS provider CloudFlare has some great features for Web Applications (caching, SSL termination, Reports), but you can also use it as a Dyanmic DNS server…</p>
-
-
-        <h4><a href="/blog/">View more posts</a></h4>
-
-      </div>
-    </div>
-</section>
-
-<!-- Latest Post Preview End -->
-
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
     
-      
-        
-      
-        
-      
-        
+    
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+<!-- Share Buttons End -->
+
+
           
-<!-- Contact Start -->
 
-<section id="contact" class="container content-section text-center">
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1">
-
-      <h2 id="contact">Contact</h2>
-
-<p>Drop me an email or follow me on the below services.</p>
-
-
-      
-        
           
-            <p>
-            <script>
-              function join_at_email(user, domain){
-              return (user && domain)?(user + "@" + domain):"";
-              }
-              document.write('<a href="mailto:'
-              + join_at_email( "daniel", "gadd.co.nz" )
-              + '">'
-              + join_at_email( "daniel", "gadd.co.nz" )
-              + '</a>'
-              );
-              </script>
-            </p>
-        
-      
-
-      
 <!-- Social Buttons Start -->
 
 <ul class="list-inline social-buttons">
@@ -294,37 +229,9 @@ Don’t forget to check out my contact page if you want to get in touch
 <!-- Social Buttons End -->
 
 
-    </div>
-  </div>
-</section>
-
-<!-- Contact End -->
-
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
+        </div>
+      </div>
+    </section>
 
     
  <!-- Footer Start -->
@@ -364,13 +271,12 @@ $(window).scroll(toggleNavCollapse);$(function(){$("a.page-scroll").bind("click"
 
 
 
-  <!-- Collapse navbar when navbar-brand is clicked -->
-
-  <script>
-  $(function(){$(".navbar-brand").click(function(){$(".collapse.in")&&$(".collapse.in").animate({height:"1px"},500,function(){$(".collapse.in").removeClass("in")})})});
-  </script>
 
 
+  <!-- Syntax highlight in post pages-->
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 
 
 
@@ -379,6 +285,17 @@ $(window).scroll(toggleNavCollapse);$(function(){$("a.page-scroll").bind("click"
 
 
   <!-- Disqus -->
+
+  
+
+    <script type="text/javascript">
+    var disqus_shortname = 'danielgadd';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
 
   
 
@@ -407,21 +324,73 @@ $(window).scroll(toggleNavCollapse);$(function(){$("a.page-scroll").bind("click"
 
 
 
+  <!-- Share buttons Start -->
+
+  <script src="/js/rrssb.min.js"></script>
+
+  <!-- Share buttons End -->
+
+
+
 
 
 <script>
 function addTohistory() {
   if (!window.location.host.startsWith("127.0.0.1")) {
-    history.pushState({}, '', 'https://gadd.co.nz/');
+    history.pushState({}, 'Why Arch Linux?', 'https://gadd.co.nz/linux/2016/01/08/why-arch-linux.html');
   }
 }
 </script>
 
 
 
+  <!-- Post Gesture Navigation Start -->
+
+  <script type="text/javascript" src="/js/hammer.min.js"></script>
+
+  <script>
+    var post = document.getElementById('post');
+
+    new Hammer(post).on('swipeleft', function(event) {
+      addTohistory();
+      
+        document.location.replace("/linux/2016/01/08/install-arch-on-macbookpro.html");
+      
+    });
+
+    new Hammer(post).on('swiperight', function(event) {
+      addTohistory();
+      
+        document.location.replace("/configuration/2016/01/13/CfDDNS-with-systemd.html");
+      
+    });
+  </script>
+
+  <!-- Post Gesture Navigation Start -->
 
 
 
+
+
+
+
+
+
+  <!-- Swipe Instructions for Post Start -->
+
+  <script>
+    $(document).ready(function(){
+      if(!localStorage.getItem('post-swipeshowed')){
+        $("#swipe-instruction").fadeIn();
+        $("#swipe-instruction .close-swipe-instruction").click(function(){
+          $("#swipe-instruction").fadeOut();
+        });
+        localStorage.setItem('post-swipeshowed', true);
+      }
+    });
+  </script>
+
+  <!-- Swipe Instructions for Post End -->
 
 
 
@@ -431,4 +400,4 @@ function addTohistory() {
   
 
 
-<!-- Index Layout End -->
+<!-- Post Layout End -->

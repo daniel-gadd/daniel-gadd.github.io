@@ -1,0 +1,595 @@
+
+<!-- Post Layout Start -->
+
+
+
+
+  
+<!-- HEAD Start -->
+
+
+  
+
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Blog and website of Daniel Gadd, blogging mainly for tech. Opinions expressed are mine.">
+  <meta name="author" content="Daniel Gadd">
+  <meta name="keywords" content="">
+  <link rel="canonical" href="/configuration/2016/01/13/CfDDNS-with-systemd.html">
+  <title>{ Daniel Gadd }  | Update CloudFlare DDNS with systemd timers</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <!-- Custom CSS -->
+  <link href="/css/grayscale.css" rel="stylesheet">
+  
+
+  
+
+  <!-- Custom Fonts -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/rrssb.css">
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+  
+
+  
+
+  
+
+
+  <!-- iOS Web App mode -->
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon" sizes="36x36" href="/img/web-app/icon-36p.png">
+  <link rel="apple-touch-icon" sizes="48x48" href="/img/web-app/icon-48p.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/img/web-app/icon-72p.png">
+  <link rel="apple-touch-icon" sizes="96x96" href="/img/web-app/icon-96p.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/img/web-app/icon-144p.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="/img/web-app/icon-192p.png">
+
+  <!-- Android Web App mode -->
+
+  <link rel="manifest" href="/manifest.json">
+
+
+
+
+  
+
+
+  <!-- Syntax highlight in post pages -->
+
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/monokai_sublime.min.css">
+
+
+
+
+
+
+<!-- HEAD End -->
+
+
+  
+
+    
+<!-- Navigation Start -->
+
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+        <i class="fa fa-bars"></i>
+      </button>
+      
+        <a class="navbar-brand" href="/">
+      
+          <div>
+            
+              <img src="/img/black-lab-glass.ico" alt="">
+            
+            { Daniel Gadd }
+          </div>
+        </a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+      <ul class="nav navbar-nav">
+        
+          <!-- Blog, Post, Tag and Error pages -->
+          
+            <li>
+            
+                <a href="/#about"> About </a>
+            
+            </li>
+          
+            <li>
+            
+              
+                <a href="/blog/"> Blog </a>
+              
+            
+            </li>
+          
+            <li>
+            
+                <a href="/#contact"> Contact </a>
+            
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Navigation End -->
+
+
+    <section id="post" class="container content-section text-left">
+      <div class="row">
+        <div class="col-md-100">
+
+          
+<!-- Swipe Instructions Start -->
+
+<div id="swipe-instruction">
+  <div>
+    <p><br><br><br></p>
+    <i id="hand-swipe" class="fa fa-hand-o-up"></i>
+    <p><strong>
+    
+      Did you know that you can navigate the posts by swiping left and right?
+    
+    </strong></p>
+    <button type="button" class="btn btn-default ok-btn close-swipe-instruction">
+      
+        Awesome!
+      
+    </button>
+  </div>
+</div>
+
+<!-- Swipe Instructions End -->
+
+
+          <h1><strong>Update CloudFlare DDNS with systemd timers</strong></h1>
+          <h4>
+<strong>13 Jan 2016</strong>
+            <small> . configuration . <a href="/configuration/2016/01/13/CfDDNS-with-systemd.html#disqus_thread">Comments</a>
+            
+            </small>
+          </h4>
+
+          <h2 id="cloudflare-as-a-dyanmic-dns-provider">CloudFlare As a Dyanmic DNS provider</h2>
+
+<p>CloudFlare has some great features for Web Applications (caching, SSL termination, Reports), but you can also use it
+as a Dyanmic DNS server thanks to its great API. suppose you have a webserver, or VPN/SSH endpoint on your internet connection,
+But, your provider doesnt give you a static IP. How do you manage the DNS record?
+Well you could sign up a DDNS service or manually update the record…
+Well, you could also use CF for DNS hosting and use their API to update your record.</p>
+
+<p>To keep our record up-to-date, we need to periodically update the record, incase our external IP address changes.
+in the past, we used cron jobs to achieve such tasks, a simple one line to call a command on predefined intervals.</p>
+
+<p>Instead of cron, we can use the power of systemds’ timers to achieve the same result. If your OS supports systemd, I
+would recommend this over a cron job.</p>
+
+<h2 id="why-systemd">Why Systemd</h2>
+
+<p>systemd is the replacement to the older SysVInit system, systemd adds much more functionality, specifically,
+it has the ability to replace cron jobs, which is what we are interested in here.</p>
+
+<p>My Current server OS (Debian) supports systemd out of the box, and any OS with an update in the past year should
+also ship with systemd (most popular distros appear to, or will shortly).</p>
+
+<p>I chose not to go down the ddclient patching path (which is widely blogged and documented) as its messy and mucks with core packages, meaning security and version updates might break the patch.</p>
+
+<p>Lastly, I had a python script inside cron which did the DNS updates, but this is broken (not sure why) and my python isnt great so I cant be bothered to debug it.</p>
+
+<h2 id="how-does-it-work">How does it work</h2>
+
+<p>Before I go into the full step by step guide, i’ll briefly go over the process and what I want to archeve by this process.</p>
+
+<p>We have a simple bash script which will update our CloudFlare DNS A record with our external IP address. This script will be
+executed every 5mins after boot using a systemd timer.</p>
+
+<p>The bash script will use a HTTP POST to the cloudflare API containing our record ID, API key, DOMAIN, Record type, Record Name and IP Address.</p>
+
+<h2 id="setup-and-installation">Setup and Installation</h2>
+
+<p><strong>WARNING: Please carefully read ALL commands and scripts posted before running them, Please DO NOT blindly copy and past. I will not be responsible for data loss or OS issues.</strong></p>
+
+<h3 id="requirements">Requirements</h3>
+
+<p>There are a few requirements, to get this going. You will need the following:</p>
+<ul>
+  <li>A CloudFlare account (free is fine)</li>
+  <li>Your DNS hosted with CloudFlare</li>
+  <li>Your CloudFlare API Key</li>
+  <li>systemd</li>
+  <li>An exsisting DNS record which will recieve the updates (can have a dummy IP)</li>
+  <li>sudo access</li>
+</ul>
+
+<p>If you have all that… carry on.</p>
+
+<h3 id="the-bash-script">The bash script</h3>
+
+<p>There are two parts to geting this working, the first, is getting your exsisting record details with an API call, then we need to use of those
+details to fill in the bash script.</p>
+
+<p>Lets get the information we need from CloudFlare, run the following <code class="highlighter-rouge">curl</code> command to see all your DNS information.</p>
+
+<pre><code data-trim="" class="bash">
+curl https://www.cloudflare.com/api_json.html -d 'a=rec_load_all' \
+-d 'tkn=YOUR_CloudFlare_API_Key' \
+-d 'email=YOUR_CloudFlare_Email_Address' \
+-d 'z=YOUR_DOMAINNAME (eg example.com)'
+
+</code></pre>
+
+<p>This command will return JSON, so use a JSON viewer to make it easy to read. We are interested in <code class="highlighter-rouge">rec\_id</code> and <code class="highlighter-rouge">type</code> fields for the record.</p>
+
+<p>In this example, my rec_id is: 123456 and record type is A and the name is www.example.com</p>
+
+<p>Lets create a bash script to make the update, create <code class="highlighter-rouge">/usr/local/bin/update-cfddns.sh</code> with the following content:</p>
+
+<pre><code data-trim="" class="bash">
+#!/bin/sh
+NEW_IP=`wget -O - -q http://ifconfig.me/ip`
+CURRENT_IP=`cat /var/tmp/current_ip.txt`
+
+if [ "$NEW_IP" = "$CURRENT_IP" ]
+then
+        echo "No Change in IP Adddress"
+else
+        curl https://www.cloudflare.com/api_json.html \
+          -d 'a=rec_edit' \
+          -d 'tkn=YOUR_API_KEY' \
+          -d 'email=daniel@example.com' \
+          -d 'z=example.com' \
+          -d 'id=123456' \
+          -d 'type=A' \
+          -d 'name=www.example.com' \
+          -d 'ttl=1' \
+          -d "content=$NEW_IP"
+        echo $NEW_IP &gt; /var/tmp/current_ip.txt
+fi
+
+</code></pre>
+
+<p>Dont forget to <code class="highlighter-rouge">chmod +x</code> the file.</p>
+
+<h3 id="systemd-timers">Systemd timers</h3>
+
+<p>Systemd use two units to create a timer, Think of a unit as a action (or file), one unit defines the timer and its intervals, the
+second is the service (or action) we want the timer to trigger. The service will have the bash script referenced.</p>
+
+<p>There are two ways to this, you could create a generic timer with a target, then service units can listen for that target and run. Alternatively, we can
+write a specfic timer and call the service from that. Im going to the latter of the two.</p>
+
+<h4 id="setup-units">Setup Units</h4>
+
+<p>Create A timer file into <code class="highlighter-rouge">/etc/systemd/system/CfDDNS-timer.timer</code> with the following:</p>
+<pre><code data-trim="">
+[Unit]
+Description=CfDDNS DNS Update Timer
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=5min
+Unit=CfDDNS.service
+
+[Install]
+WantedBy=basic.target
+
+</code></pre>
+
+<p>What do these lines do?</p>
+
+<ul>
+  <li>
+<b>Description:</b> A short desc about what the timer does.</li>
+  <li>
+<b>OnBootSec:</b> How long after boot to run the timer for the first time.</li>
+  <li>
+<b>OnUnitActiveSec:</b> Interval between each run (in this case, run the timer every 5mins).</li>
+  <li>
+<b>Unit:</b> What to do when the timer runs.</li>
+  <li>
+<b>WantedBy:</b> Dependencies to help with service ordering. (theres no point running this without network)</li>
+</ul>
+
+<p>Next, create a service into <code class="highlighter-rouge">/etc/systemd/system/CfDDNS.service</code> with the following:</p>
+
+<pre><code data-trim="">
+[Unit]
+Description=Update CfDDNS DNS Record
+Wants=CfDDNS-timer.timer
+
+[Service]
+ExecStart=/usr/local/bin/update-cfddns.sh
+
+</code></pre>
+<p></p>
+
+<p>What have we set in this service?</p>
+<ul>
+  <li>
+<b>Description:</b> A short desc about what the service does.</li>
+  <li>
+<b>Wants:</b> A Dependency that requires our timer to be active.</li>
+  <li>
+<b>ExecStart:</b> What to run when this unit is executed. (this is our actual script from before)</li>
+</ul>
+
+<h4 id="setup-systemd">Setup systemd</h4>
+
+<p>Now we have our timer and our code to execute, systemd wont just automatically run this timer, we need to enable it and start it.
+To do that, we just system <code class="highlighter-rouge">systemctl</code>:</p>
+
+<pre><code data-trim="" class="bash">
+sudo systemctl enable CfDDNS-timer.timer
+sudo systemctl start CfDDNS-timer.timer
+
+</code></pre>
+<p></p>
+
+<h4 id="testing-and-verification">Testing and Verification</h4>
+
+<p>Hopefully the systemd configuration and units where setup without an issue, we can verify their status using <code class="highlighter-rouge">systemctl</code> commands.
+We are going to check the status two ways, one is list out the timers, useful to check we are infact running every 5mins, and that we call
+the CfDDNS.service.</p>
+
+<p>The Second one will provide more verbose output using the status param.</p>
+
+<p><strong>1:</strong> View the systemd timers</p>
+
+<pre><code data-trim="" class="bash">
+sudo systemctl list-timers
+
+NEXT                          LEFT          LAST                          PASSED       UNIT                         ACTIVATES
+Fri 2016-01-15 09:10:47 NZDT  3min 12s left Fri 2016-01-15 09:05:47 NZDT  1min 47s ago CfDDNS-timer.timer           CfDDNS.service
+n/a                           n/a           Tue 2016-01-12 06:45:52 NZDT  3 days ago   ureadahead-stop.timer        ureadahead-stop.service
+
+</code></pre>
+
+<p><strong>2:</strong> view the timer unit status:</p>
+
+<pre><code data-trim="" class="bash">
+sudo systemctl status CfDDNS-timer.timer
+
+● CfDDNS-timer.timer - CfDDNS DNS Update Timer
+   Loaded: loaded (/etc/systemd/system/CfDDNS-timer.timer; enabled; vendor preset: enabled)
+   Active: active (waiting) since Tue 2016-01-12 09:45:15 NZDT; 2 days ago
+
+Jan 12 09:45:15 elmo systemd[1]: Started CfDDNS DNS Update Timer.
+Jan 12 09:45:30 elmo systemd[1]: Started CfDDNS DNS Update Timer.
+
+</code></pre>
+
+<p>Hopefully this has been useful and a good example on how to write systemd timers and units, these are also available on github in my dotfiles repo if you want
+the up-to-date version (incase I made changes and didnt update my blog post).</p>
+
+
+          
+<!-- Share Buttons Start -->
+<div>
+  <ul class="rrssb-buttons clearfix">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+<!-- Share Buttons End -->
+
+
+          
+
+          
+<!-- Social Buttons Start -->
+
+<ul class="list-inline social-buttons">
+  
+    <li><a href="https://github.com/daniel-gadd" target="_blank"><i class="fa fa-github fa-fw"></i></a></li>
+  
+    <li><a href="https://blockchain.info/address/14NJBGDut7suJRcZXGXyDN4CVJ5XsRj7N3" target="_blank"><i class="fa fa-bitcoin fa-fw"></i></a></li>
+  
+</ul>
+
+<!-- Social Buttons End -->
+
+
+        </div>
+      </div>
+    </section>
+
+    
+ <!-- Footer Start -->
+
+<footer>
+    <div class="container text-center">
+      <p>Copyright © Daniel Gadd 2016</p>
+    </div>
+</footer>
+
+<p><br><br><br><br><br><br></p>
+
+<!-- Footer End -->
+
+
+    
+<!-- Javascript Start -->
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<!--* Start Bootstrap - Grayscale Bootstrap Theme (http://startbootstrap.com)
+* Code licensed under the Apache License v2.0.
+* For details, see http://www.apache.org/licenses/LICENSE-2.0.-->
+<script>
+function toggleNavCollapse(){50<$(".navbar").offset().top?$(".navbar-fixed-top").addClass("top-nav-collapse"):$(".navbar-fixed-top").removeClass("top-nav-collapse");}
+$(document).ready(toggleNavCollapse);
+$(window).scroll(toggleNavCollapse);$(function(){$("a.page-scroll").bind("click",function(b){var a=$(this);$("html, body").stop().animate({scrollTop:$(a.attr("href")).offset().top-50},1500,"easeInOutExpo",function(){a.blur()});b.preventDefault()})});$(".navbar-collapse ul li a").click(function(){$(".navbar-toggle:visible").click()});
+</script>
+
+
+
+
+
+  <!-- Syntax highlight in post pages-->
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+  <!-- Disqus -->
+
+  
+
+    <script type="text/javascript">
+    var disqus_shortname = 'danielgadd';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+  
+
+  
+
+    <!-- Comments Counter Start -->
+
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'danielgadd'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    </script>
+
+    <!-- Comments Counter End -->
+
+  
+
+
+
+
+
+  <!-- Share buttons Start -->
+
+  <script src="/js/rrssb.min.js"></script>
+
+  <!-- Share buttons End -->
+
+
+
+
+
+<script>
+function addTohistory() {
+  if (!window.location.host.startsWith("127.0.0.1")) {
+    history.pushState({}, 'Update CloudFlare DDNS with systemd timers', 'https://gadd.co.nz/configuration/2016/01/13/CfDDNS-with-systemd.html');
+  }
+}
+</script>
+
+
+
+  <!-- Post Gesture Navigation Start -->
+
+  <script type="text/javascript" src="/js/hammer.min.js"></script>
+
+  <script>
+    var post = document.getElementById('post');
+
+    new Hammer(post).on('swipeleft', function(event) {
+      addTohistory();
+      
+        document.location.replace("/linux/2016/01/08/why-arch-linux.html");
+      
+    });
+
+    new Hammer(post).on('swiperight', function(event) {
+      addTohistory();
+      
+        document.location.replace("/");
+      
+    });
+  </script>
+
+  <!-- Post Gesture Navigation Start -->
+
+
+
+
+
+
+
+
+
+  <!-- Swipe Instructions for Post Start -->
+
+  <script>
+    $(document).ready(function(){
+      if(!localStorage.getItem('post-swipeshowed')){
+        $("#swipe-instruction").fadeIn();
+        $("#swipe-instruction .close-swipe-instruction").click(function(){
+          $("#swipe-instruction").fadeOut();
+        });
+        localStorage.setItem('post-swipeshowed', true);
+      }
+    });
+  </script>
+
+  <!-- Swipe Instructions for Post End -->
+
+
+
+<!-- Javascript End -->
+
+
+  
+
+
+<!-- Post Layout End -->

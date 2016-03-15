@@ -1,0 +1,662 @@
+
+<!-- Post Layout Start -->
+
+
+
+
+  
+<!-- HEAD Start -->
+
+
+  
+
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Blog and website of Daniel Gadd, blogging mainly for tech. Opinions expressed are mine.">
+  <meta name="author" content="Daniel Gadd">
+  <meta name="keywords" content="">
+  <link rel="canonical" href="/linux/2016/01/08/install-arch-on-macbookpro.html">
+  <title>{ Daniel Gadd }  | Part 1: Install Arch Linux on a Retina MacBook Pro</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <!-- Custom CSS -->
+  <link href="/css/grayscale.css" rel="stylesheet">
+  
+
+  
+
+  <!-- Custom Fonts -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/rrssb.css">
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+  
+
+  
+
+  
+
+
+  <!-- iOS Web App mode -->
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon" sizes="36x36" href="/img/web-app/icon-36p.png">
+  <link rel="apple-touch-icon" sizes="48x48" href="/img/web-app/icon-48p.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/img/web-app/icon-72p.png">
+  <link rel="apple-touch-icon" sizes="96x96" href="/img/web-app/icon-96p.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/img/web-app/icon-144p.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="/img/web-app/icon-192p.png">
+
+  <!-- Android Web App mode -->
+
+  <link rel="manifest" href="/manifest.json">
+
+
+
+
+  
+
+
+  <!-- Syntax highlight in post pages -->
+
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/monokai_sublime.min.css">
+
+
+
+
+
+
+<!-- HEAD End -->
+
+
+  
+
+    
+<!-- Navigation Start -->
+
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+        <i class="fa fa-bars"></i>
+      </button>
+      
+        <a class="navbar-brand" href="/">
+      
+          <div>
+            
+              <img src="/img/black-lab-glass.ico" alt="">
+            
+            { Daniel Gadd }
+          </div>
+        </a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+      <ul class="nav navbar-nav">
+        
+          <!-- Blog, Post, Tag and Error pages -->
+          
+            <li>
+            
+                <a href="/#about"> About </a>
+            
+            </li>
+          
+            <li>
+            
+              
+                <a href="/blog/"> Blog </a>
+              
+            
+            </li>
+          
+            <li>
+            
+                <a href="/#contact"> Contact </a>
+            
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Navigation End -->
+
+
+    <section id="post" class="container content-section text-left">
+      <div class="row">
+        <div class="col-md-100">
+
+          
+<!-- Swipe Instructions Start -->
+
+<div id="swipe-instruction">
+  <div>
+    <p><br><br><br></p>
+    <i id="hand-swipe" class="fa fa-hand-o-up"></i>
+    <p><strong>
+    
+      Did you know that you can navigate the posts by swiping left and right?
+    
+    </strong></p>
+    <button type="button" class="btn btn-default ok-btn close-swipe-instruction">
+      
+        Awesome!
+      
+    </button>
+  </div>
+</div>
+
+<!-- Swipe Instructions End -->
+
+
+          <h1><strong>Part 1: Install Arch Linux on a Retina MacBook Pro</strong></h1>
+          <h4>
+<strong>08 Jan 2016</strong>
+            <small> . linux . <a href="/linux/2016/01/08/install-arch-on-macbookpro.html#disqus_thread">Comments</a>
+            
+            </small>
+          </h4>
+
+          <hr>
+
+<h2>Purpose of this post</h2>
+<p>This post is more of a technical guide/build log for myself as getting arch installed took alot of time and research, so this is post of all the steps I found to make Arch work.</p>
+<p>This post is specific to my setup, so some steps are based on a personal preference.</p>
+<p>Also, i’d like to think this will be useful for anyone else wanting to do the same thing.</p>
+<p>Im going to cover the following installation/setup steps in a three part series</p>
+<ul>
+	<li>Partitioning</li>
+	<li>Full Disk Encryption and filesystem</li>
+	<li><span class="caps">BTRFS</span></li>
+	<li>Installation and post install tasks</li>
+	<li>WiFi setup</li>
+	<li>Xorg</li>
+	<li>Graphical desktop</li>
+	<li>Personalisation</li>
+	<li>Software</li>
+	<li>Docker</li>
+</ul>
+<h3>My Particular Installation</h3>
+<p>I have opted to install Arch Linux as a single operating system, therefore losing OS X, the great thing about Apple, is they’re recovery software is in the cloud and can be restored from the <span class="caps">EFI</span> firmware (using command+R on boot). This means if I never need OS X again I could reinstall.</p>
+<p>I want to use <span class="caps">EFI</span> boot with a <span class="caps">LUKS</span> dm-crypt partition to ensure my data is encrypted. I picked btrfs as my filesystem over ext4 as I believe this has some great advantages, like <span class="caps">COW</span>, compression, snapshotting, subvolumes and is optimised for SSD’s with a single mount option. Finally for <span class="caps">GUI</span>, I am using <span class="caps">SDDM</span> as my graphical manager with <span class="caps">KDE</span> plasma 5 and i3-wm as the Desktop Environment and window manager.</p>
+<div class="post-warning">
+  <p style="color: black; font-size: 16px"><strong><span class="caps">WARNING</span>:</strong> Dont Just Copy and paste commands on here – You could lose data! </p>
+</div>
+<hr>
+
+<h2>Why Arch Linux</h2>
+<p>Have a read of my “Why I choose Arch Linux” post <a href="/linux/2016/01/08/why-arch-linux.html">here.</a></p>
+<hr>
+
+<h2>My MacBook</h2>
+<p>Firstly, I love the apple hardware, they build great looking machines. I have been using the MacBook Pro line since they were introduced with Intel Hardware. The latest retina modules with thin uni-bodies are very good looking machine, my only issue is that apple dropped the ethernet port, I guess this is to make the body thin, but the ethernet port is important for me.</p>
+<p>The Specifications are:</p>
+<ul>
+	<li>Apple Macbook Pro Retina 13" early 2014 (MacBookPro10,1)</li>
+	<li>Intel Core i5-3230M @ 2.60GHz</li>
+	<li>8 GB Ram</li>
+	<li>Intel Iris <span class="caps">GPU</span>
+</li>
+	<li>Facetime HD Camera (<span class="caps">USB</span>)</li>
+	<li>13.3" Retina Display, max resolution 2560×1600</li>
+</ul>
+<p><code>lspci</code>:<br>
+</p>
+<pre><code data-trim="">
+00:00.0 Host bridge: Intel Corporation 3rd Gen Core processor DRAM Controller (rev 09)
+00:01.0 PCI bridge: Intel Corporation Xeon E3-1200 v2/3rd Gen Core processor PCI Express Root Port (rev 09)
+00:01.1 PCI bridge: Intel Corporation Xeon E3-1200 v2/3rd Gen Core processor PCI Express Root Port (rev 09)
+00:02.0 VGA compatible controller: Intel Corporation 3rd Gen Core processor Graphics Controller (rev 09)
+00:14.0 USB controller: Intel Corporation 7 Series/C210 Series Chipset Family USB xHCI Host Controller (rev 04)
+00:16.0 Communication controller: Intel Corporation 7 Series/C210 Series Chipset Family MEI Controller #1 (rev 04)
+00:1a.0 USB controller: Intel Corporation 7 Series/C210 Series Chipset Family USB Enhanced Host Controller #2 (rev 04)
+00:1b.0 Audio device: Intel Corporation 7 Series/C210 Series Chipset Family High Definition Audio Controller (rev 04)
+00:1c.0 PCI bridge: Intel Corporation 7 Series/C210 Series Chipset Family PCI Express Root Port 1 (rev c4)
+00:1c.1 PCI bridge: Intel Corporation 7 Series/C210 Series Chipset Family PCI Express Root Port 2 (rev c4)
+00:1d.0 USB controller: Intel Corporation 7 Series/C210 Series Chipset Family USB Enhanced Host Controller #1 (rev 04)
+00:1f.0 ISA bridge: Intel Corporation QS77 Express Chipset LPC Controller (rev 04)
+00:1f.2 SATA controller: Intel Corporation 7 Series Chipset Family 6-port SATA Controller [AHCI mode] (rev 04)
+00:1f.3 SMBus: Intel Corporation 7 Series/C210 Series Chipset Family SMBus Controller (rev 04)
+02:00.0 Ethernet controller: Broadcom Corporation NetXtreme BCM57786 Gigabit Ethernet PCIe (rev 21)
+02:00.1 SD Host controller: Broadcom Corporation BCM57765/57785 SDXC/MMC Card Reader (rev 21)
+03:00.0 Network controller: Broadcom Corporation BCM4331 802.11a/b/g/n (rev 02)
+04:00.0 PCI bridge: Intel Corporation DSL3510 Thunderbolt Port [Cactus Ridge] (rev 03)
+05:00.0 PCI bridge: Intel Corporation DSL3510 Thunderbolt Port [Cactus Ridge] (rev 03)
+05:03.0 PCI bridge: Intel Corporation DSL3510 Thunderbolt Port [Cactus Ridge] (rev 03)
+05:04.0 PCI bridge: Intel Corporation DSL3510 Thunderbolt Port [Cactus Ridge] (rev 03)
+05:05.0 PCI bridge: Intel Corporation DSL3510 Thunderbolt Port [Cactus Ridge] (rev 03)
+05:06.0 PCI bridge: Intel Corporation DSL3510 Thunderbolt Port [Cactus Ridge] (rev 03)
+06:00.0 System peripheral: Intel Corporation DSL3510 Thunderbolt Port [Cactus Ridge] (rev 03)
+</code></pre>
+<p><code>lsusb</code>:<br>
+</p>
+<pre><code data-trim="">
+Bus 004 Device 004: ID 0a5c:4500 Broadcom Corp. BCM2046B1 USB 2.0 Hub (part of BCM2046 Bluetooth)
+Bus 004 Device 002: ID 8087:0024 Intel Corp. Integrated Rate Matching Hub
+Bus 003 Device 003: ID 05ac:8510 Apple, Inc. FaceTime HD Camera (Built-in)
+Bus 003 Device 002: ID 8087:0024 Intel Corp. Integrated Rate Matching Hub
+</code></pre>
+<hr>
+
+<h2>Base Install</h2>
+<p><em>I didnt opt to keep OS X installed, so if you need to dual boot, google the steps on partitioning</em></p>
+<h3>Create Arch Linux <span class="caps">USB</span>
+</h3>
+<p>Prepare A <span class="caps">USB</span> key, you’ll need at least 2GB to be safe, run the following commands in either OS X or Linux:</p>
+<pre><code data-trim="" class="bash">
+wget http://ftp.iinet.net.au/pub/archlinux/iso/2016.01.01/archlinux-2016.01.01-dual.iso
+dd if=archlinux-2015.01.01-dual.iso of=/dev/xx bs=4M
+
+</code></pre>
+<p>Next, boot the <span class="caps">USB</span> by holding down the right alt key on boot. If you have a <span class="caps">USB</span> or thunderbolt ethernet adaptor, make sure its connected before you boot the installer.</p>
+<div style="background-color: #E0BEFC">
+<p style="color: black; font-size: 16px"> <strong><span class="caps">NOTE</span>:</strong> The Broadcom WiFi Drivers are not installed to the installation <span class="caps">USB</span>, so you will need wired, Alternatively you can pre-compile the drivers as part of the installation, but I wont cover that. </p>
+</div>
+<p>Once the Arch Linux installer has booted, you’ll be presented with a zsh shell.<br>
+Incase the font is too small, you can increase it:<br>
+</p>
+<pre><code data-trim="" class="bash">
+setfont sun12x22
+</code></pre>
+<h3>Disk Partitioning</h3>
+<p>We will only create one partition for dm-crypt and btrfs  (however I will have space unallocated incase I need a swap partition later).</p>
+<p>Because we are using <span class="caps">EFI</span> boot, we dont need to create a /boot instead, instead we will use the exsisting <span class="caps">EFI</span> boot partition already on the disk (this should be /dev/sda1).</p>
+<p>Running <code>lsblk</code> reports the following:<br>
+</p>
+<pre><code data-trim="">
+NAME          MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINT
+sda             8:0    0 233.8G  0 disk
+├─sda1          8:1    0   200M  0 part
+└─sda2          8:2    0 233.6G  0 part
+</code></pre>
+<p>For partitioning, im going to use cgdisk, this can be run by issing:<br>
+</p>
+<pre><code data-trim="" class="bash">
+cgdisk /dev/sda
+</code></pre>
+<p>Here, i’ll just delete the Macintosh HD and Recovery HD partitions and create a new partition with the type code <strong>8300</strong> and use 100% of the free space.</p>
+<p>In the end I’ll end up with following partition table:<br>
+</p>
+<pre><code data-trim="">
+Part. #    Size        Partition Type      Partition Name
+-------------------------------------------------------
+          3.0 KiB      free space
+1         200.0 MiB    EFI System           EFI System Partition
+2         233.6 GiB    Linux filesystem     Arch Linux
+</code></pre>
+<h3>DM-Crypt</h3>
+<p>We are going to encrypt the entire <strong>/dev/sda2</strong> and install our filesystem underneath. DM-Crypt is the standard Full disk encryption library and supports a large number of ciphers and key-sizes.<br>
+The Arch Linux wiki has some great <a href="https://wiki.archlinux.org/index.php/Dm-crypt/Device_encryption">guidelines</a> about setting up DM-Crypt in Arch.</p>
+<p>The cipher and key-size I have picked is more for read and write speed instead of picking a stronger cipher which will provide better protection against supercomputer brute forcing, as im more worried about my passwords/keys if I loose my computer.</p>
+<p>To setup DM-Crypt on <strong>/dev/sda2</strong>, we will run:<br>
+</p>
+<pre><code data-trim="" class="bash">
+cryptsetup -v --cipher aes-xts-plain64 --key-size 512 -y luksFormat /dev/sda2
+</code></pre>
+<div class="post-warning" style="background-color: #E0BEFC">
+<p style="color: black; font-size: 16px"> <strong>Note:</strong> Common Password complexity guidelines apply here, remember if the password is simple, or guessable, it renders encryption useless, best to use a unique string passphrase. </p>
+</div>
+<p>Now, we can unencrypt the <span class="caps">LUKS</span> parition and mount it ready to setup btrfs:<br>
+</p>
+<pre><code data-trim="" class="bash">
+cryptsetup luksOpen /dev/sda1 archcrypt
+</code></pre>
+<h3><span class="caps">BTRFS</span></h3>
+<p>Most guides I followed, used the common <span class="caps">LVM</span> or <span class="caps">LVM</span> over <span class="caps">LUKS</span> setup, however i’m going for something a little different, instead of setting up <span class="caps">LVM</span> and then <span class="caps">BTRFS</span>, I will setup <span class="caps">BTRFS</span> straight onto <span class="caps">LUKS</span>.</p>
+<div class="post-warning">
+<p style="color: black; font-size: 16px"> <strong><span class="caps">WARNING</span>:</strong> <span class="caps">BTRFS</span> is no yet considered stable and while no new features or changes will be made from this point on, If your data is important, I would not recommend continuing, This is also <strong><span class="caps">NOT</span> Recommended for production environments</strong> </p>
+</div>
+<p><em>Its worth noting, I have yet to experience any issues or data loss.</em></p>
+<p>The <a href="https://btrfs.wiki.kernel.org/index.php/Main_Page">btrfs project page</a> has more information about <span class="caps">BTRFS</span> and its development.</p>
+<p>We are going to setup <span class="caps">BTRFS</span>, create a <span class="caps">ROOT</span> subvolume, and then create some more subvolumes underneath the <span class="caps">ROOT</span> subvolume. Subvolumes appear as folders when you run an <code>ls</code>, they also let us to do snapshotting. Instead of snapshotting the entire disk,  we can snapshot folders (subvolumes). Instead meaning better usage of disk space. We are also going to specify lzo as the compression, as the default compression. is more load intensive – and we want speed.</p>
+<pre><code data-trim="" class="bash">
+mkfs.btrfs -L "Arch Linux" /dev/mapper/archcrypt
+mount /dev/mapper/archcrypt /mnt
+cd /mnt
+btrfs subvolume create ROOT
+umount /mnt
+
+# Here we specify the Subvolume to mount into, and set some SSD options
+mount -o ssd,discard,compress=lzo,subvol=ROOT /dev/mapper/archcrypt /mnt
+cd /mnt
+
+# Now create standard linux folders in / (for snapshotting)
+btrfs subvolume create home
+btrfs subvolume create root
+btrfs subvolume create etc
+btrfs subvolume create proc
+btrfs subvolume create var
+btrfs subvolume create usr
+
+</code></pre>
+<p>Once done, we should have some directories in /mnt. While they appear to be directories, you cant delete them using the <code>rm</code> command. We can view what subvolumes we have using:</p>
+<pre><code data-trim="" class="bash">
+btrfs subvolume list /
+
+</code></pre>
+<h3>Installing Base Operating System</h3>
+<p>Now are <em>almost</em> ready to install the Arch OS, we just need to mount <strong>/dev/sda1</strong> as our boot device, so the installation can install the kernel etc:</p>
+<pre><code data-trim="" class="bash">
+mkdir /mnt/boot
+mount /dev/sda1 /mnt/boot
+
+</code></pre>
+<p>Lets install base and base-devel – We also need btrfs-progs so we can issue <code>btrfs</code> commands</p>
+<pre><code data-trim="" class="bash">
+pacstrap /mnt base base-devel btrfs-progs
+
+</code></pre>
+<p>This will take some time, depending on your internet connection as it downloads all the packages from the net to ensure you get the latest packages.</p>
+<hr>
+
+<h2>Post Installation</h2>
+<p>Now we have base install, we need to chroot into that and do some post installation tasks like, set the locale settings and finally, get our <span class="caps">EFI</span> boot loader installed and configured.</p>
+<p>Whlist I could continue installing a <span class="caps">GUI</span> and applications, its best to do a few steps at a time, so we’ll do that later.</p>
+<p>Lets generate an fstab file based on whats mounted, you should still have /dev/sd* mounted from above:</p>
+<pre><code data-trim="" class="bash">
+genfstab -L -p /mnt &gt;&gt; /mnt/etc/fstab
+
+</code></pre>
+<p></p>
+<p>It should look simular to:</p>
+<pre><code data-trim="" class="bash">
+LABEL=Arch\040Linux  /	   btrfs  rw,relatime,compress=lzo,ssd,discard,space_cache,subvolid=257,subvol=ROOT	0 0
+LABEL=EFI            /boot vfat   rw,relatime,remount-ro	0 2
+
+</code></pre>
+<p><em>Just make sure the subvol=<span class="caps">ROOT</span> is set, otherwise fstab will mount the wrong subvolume.</em></p>
+<p>Now its time to setup our machine…</p>
+<p>Start by chrooting into your installation:<br>
+<code>arch-chroot /mnt</code></p>
+<p>Now lets setup the Hostname timezone and language, As im in New Zealand I’ll set my Timezone and Locale as NZ standard (en_NZ.<span class="caps">UTF</span>-8).</p>
+<pre><code data-trim="" class="bash">
+echo myhostname &gt; /etc/hostname
+ln -sf /usr/share/zoneinfo/Pacific/Auckland /etc/localtime
+
+vi /etc/locale.gen
+locale-gen
+
+echo LANG=en_NZ.UTF-8 &gt; /etc/locale.conf
+
+</code></pre>
+<h3>Bootloader and systemd-loader</h3>
+<p>Lets setup <span class="caps">UEFI</span>-systemd-boot, for this will need to write to <strong>/dev/sda1</strong> which should be mounted to <code>/boot</code>.<br>
+If its not, go back and check your setup. The loader will contain only the arch-linux option. Which we will setup using a loader entry file.</p>
+<p>Also, as part of this step will also create the initramfs img, The initramfs image is a small self contained linux image which is a supporting step to help us unlock the DM-crypt partition, setup mountpoints and set the <span class="caps">BTRFS</span> subvolume. Its also a useful debugging tool if your machine can’t boot. Once initramfs boots the kernel its no longer used.<br>
+Initamfs is generated by <code>mkinitcpio</code> which reads in a text config file. For the purpose of this guide, we are only modifying the hooks it loads (think if them like modules). Edit <code>/etc/mkinitcpio.conf</code> with the following hooks:</p>
+<pre><code data-trim="" class="bash">
+HOOKS="base udev autodetect modconf block keyboard btrfs encrypt filesystems"
+
+</code></pre>
+<p>Then generate the image with:</p>
+<pre><code data-trim="" class="bash">
+mkinitcpio -p linux
+</code></pre>
+<p><em>If you miss something, or spell a module wrong, we can re-generate it at anytime by calling the <code>mkinitcpio</code> command</em></p>
+<p>On to the <span class="caps">EFI</span> loader, first create the required folders:<br>
+</p>
+<pre><code data-trim="" class="bash">
+mkdir -p /boot/loader/entries
+</code></pre>
+<p>Second, create a default option bycreating <code>/boot/loader/loader.conf</code> with the content:</p>
+<pre><code data-trim="" class="bash">
+default arch
+timeout 4
+</code></pre>
+<p>Next, create the arch loader entry (watch the spelling and options here)<br>
+create <code>/boot/loader/entries/arch.conf</code>:</p>
+<pre><code data-trim="" class="bash">
+title     Arch Linux
+linux     /vmlinuz-linux
+initrd    /initramfs-linux.img
+options   cryptdevice=/dev/sda2:archcrypt:allow-discards root=/dev/mapper/archcrypt rootflags=subvol=ROOT rw
+
+</code></pre>
+<p><strong>Options Details:</strong></p>
+<ul>
+	<li>
+<strong>cryptdevice</strong> is the the device which we setup dm-crypt</li>
+	<li>
+<strong>:archcrypt:</strong> is the /dev/mapper name we want to mount the unecrypted disk too.</li>
+	<li>
+<strong>allow-discards</strong> will pass <span class="caps">TRIM</span> commands to the encrypted disk.</li>
+	<li>
+<strong>root</strong> is where the OS root folders are.</li>
+	<li>
+<strong>rootflags</strong> allow us to pick a <span class="caps">BTRFS</span> subvolume</li>
+</ul>
+<p>Lets create our <span class="caps">EFI</span> boot loader and install it:<br>
+</p>
+<pre><code data-trim="" class="bash">
+bootctl install
+</code></pre>
+<p><strong>That <span class="caps">SHOULD</span> conclude our base installion, all going well, you shoule be able to remove the usb and reboot into your arch installation</strong></p>
+<p><em>tip:</em><br>
+<em>If things fail or dont work, reboot into the <span class="caps">USB</span> installation, mount the partitions and chroot into them to troubleshoot or perform more actions.</em></p>
+<p>Stay tuned for part 2 (Installing a Dekstop Environment)</p>
+
+
+          
+<!-- Share Buttons Start -->
+<div>
+  <ul class="rrssb-buttons clearfix">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+<!-- Share Buttons End -->
+
+
+          
+
+          
+<!-- Social Buttons Start -->
+
+<ul class="list-inline social-buttons">
+  
+    <li><a href="https://github.com/daniel-gadd" target="_blank"><i class="fa fa-github fa-fw"></i></a></li>
+  
+    <li><a href="https://blockchain.info/address/14NJBGDut7suJRcZXGXyDN4CVJ5XsRj7N3" target="_blank"><i class="fa fa-bitcoin fa-fw"></i></a></li>
+  
+</ul>
+
+<!-- Social Buttons End -->
+
+
+        </div>
+      </div>
+    </section>
+
+    
+ <!-- Footer Start -->
+
+<footer>
+    <div class="container text-center">
+      <p>Copyright © Daniel Gadd 2016</p>
+    </div>
+</footer>
+
+<p><br><br><br><br><br><br></p>
+
+<!-- Footer End -->
+
+
+    
+<!-- Javascript Start -->
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<!--* Start Bootstrap - Grayscale Bootstrap Theme (http://startbootstrap.com)
+* Code licensed under the Apache License v2.0.
+* For details, see http://www.apache.org/licenses/LICENSE-2.0.-->
+<script>
+function toggleNavCollapse(){50<$(".navbar").offset().top?$(".navbar-fixed-top").addClass("top-nav-collapse"):$(".navbar-fixed-top").removeClass("top-nav-collapse");}
+$(document).ready(toggleNavCollapse);
+$(window).scroll(toggleNavCollapse);$(function(){$("a.page-scroll").bind("click",function(b){var a=$(this);$("html, body").stop().animate({scrollTop:$(a.attr("href")).offset().top-50},1500,"easeInOutExpo",function(){a.blur()});b.preventDefault()})});$(".navbar-collapse ul li a").click(function(){$(".navbar-toggle:visible").click()});
+</script>
+
+
+
+
+
+  <!-- Syntax highlight in post pages-->
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+  <!-- Disqus -->
+
+  
+
+    <script type="text/javascript">
+    var disqus_shortname = 'danielgadd';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+  
+
+  
+
+    <!-- Comments Counter Start -->
+
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'danielgadd'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    </script>
+
+    <!-- Comments Counter End -->
+
+  
+
+
+
+
+
+  <!-- Share buttons Start -->
+
+  <script src="/js/rrssb.min.js"></script>
+
+  <!-- Share buttons End -->
+
+
+
+
+
+<script>
+function addTohistory() {
+  if (!window.location.host.startsWith("127.0.0.1")) {
+    history.pushState({}, 'Part 1: Install Arch Linux on a Retina MacBook Pro', 'https://gadd.co.nz/linux/2016/01/08/install-arch-on-macbookpro.html');
+  }
+}
+</script>
+
+
+
+  <!-- Post Gesture Navigation Start -->
+
+  <script type="text/javascript" src="/js/hammer.min.js"></script>
+
+  <script>
+    var post = document.getElementById('post');
+
+    new Hammer(post).on('swipeleft', function(event) {
+      addTohistory();
+      
+        document.location.replace("/ssh/2015/05/05/better-management-of-ssh-config-files.html");
+      
+    });
+
+    new Hammer(post).on('swiperight', function(event) {
+      addTohistory();
+      
+        document.location.replace("/linux/2016/01/08/why-arch-linux.html");
+      
+    });
+  </script>
+
+  <!-- Post Gesture Navigation Start -->
+
+
+
+
+
+
+
+
+
+  <!-- Swipe Instructions for Post Start -->
+
+  <script>
+    $(document).ready(function(){
+      if(!localStorage.getItem('post-swipeshowed')){
+        $("#swipe-instruction").fadeIn();
+        $("#swipe-instruction .close-swipe-instruction").click(function(){
+          $("#swipe-instruction").fadeOut();
+        });
+        localStorage.setItem('post-swipeshowed', true);
+      }
+    });
+  </script>
+
+  <!-- Swipe Instructions for Post End -->
+
+
+
+<!-- Javascript End -->
+
+
+  
+
+
+<!-- Post Layout End -->

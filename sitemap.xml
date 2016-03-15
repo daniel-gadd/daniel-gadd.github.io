@@ -1,63 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>http://www.gadd.co.nz/blog/2015/05/05/better-management-of-ssh-config-files/</loc>
-    <lastmod>2015-05-05T19:54:19+12:00</lastmod>
-  </url>
-  <url>
-    <loc>http://www.gadd.co.nz/blog/2015/03/10/test-your-physical-security/</loc>
-    <lastmod>2015-03-10T09:36:22+13:00</lastmod>
-  </url>
-  <url>
-    <loc>http://www.gadd.co.nz/blog/2015/02/10/cloning-your-octopress-blog/</loc>
-    <lastmod>2015-02-10T08:43:56+13:00</lastmod>
-  </url>
-  <url>
-    <loc>http://www.gadd.co.nz/blog/2015/02/04/zaw-plugin/</loc>
-    <lastmod>2015-02-04T12:44:15+13:00</lastmod>
-  </url>
-  <url>
-    <loc>http://www.gadd.co.nz/blog/2015/02/04/notes-on-octopress/</loc>
-    <lastmod>2015-02-04T11:10:31+13:00</lastmod>
-  </url>
-  <url>
-    <loc>http://www.gadd.co.nz/blog/2015/02/04/my-first-post/</loc>
-    <lastmod>2015-02-04T08:49:04+13:00</lastmod>
-  </url>
-  <url>
-    <loc>http://www.gadd.co.nz/</loc>
-  </url>
-  <url>
-    <loc>http://www.gadd.co.nz/blog/archives/</loc>
-  </url>
-  <url>
-    <loc>http://www.gadd.co.nz/blog/</loc>
-  </url>
-  <url>
-    <loc>http://www.gadd.co.nz/about/</loc>
-  </url>
-  <url>
-    <loc>http://www.gadd.co.nz/blog/categories/octopress/</loc>
-  </url>
-  <url>
-    <loc>http://www.gadd.co.nz/blog/categories/zsh/</loc>
-  </url>
-  <url>
-    <loc>http://www.gadd.co.nz/blog/categories/git/</loc>
-  </url>
-  <url>
-    <loc>http://www.gadd.co.nz/blog/categories/pentest/</loc>
-  </url>
-  <url>
-    <loc>http://www.gadd.co.nz/blog/categories/security/</loc>
-  </url>
-  <url>
-    <loc>http://www.gadd.co.nz/blog/categories/ssh/</loc>
-  </url>
-  <url>
-    <loc>http://www.gadd.co.nz/blog/categories/linux/</loc>
-  </url>
-  <url>
-    <loc>http://www.gadd.co.nz/blog/categories/configuration/</loc>
-  </url>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <url>
+        <loc>https://gadd.co.nz/blog/</loc>
+        
+          
+          
+          
+          <priority>1.0</priority>
+          
+        
+       </url>
+    
+  
+    
+      <url>
+        <loc>https://gadd.co.nz/</loc>
+        
+          
+          
+          
+          <priority>1.0</priority>
+          
+        
+       </url>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+  
+    <url>
+      <loc>https://gadd.co.nz/configuration/2016/01/13/CfDDNS-with-systemd.html</loc>
+      
+        <lastmod>2016-01-13T12:44:15+13:00</lastmod>
+      
+      <changefreq>weekly</changefreq>
+      <priority>1.0</priority>
+    </url>
+  
+    <url>
+      <loc>https://gadd.co.nz/linux/2016/01/08/why-arch-linux.html</loc>
+      
+        <lastmod>2016-01-08T00:00:00+13:00</lastmod>
+      
+      <changefreq>weekly</changefreq>
+      <priority>1.0</priority>
+    </url>
+  
+    <url>
+      <loc>https://gadd.co.nz/linux/2016/01/08/install-arch-on-macbookpro.html</loc>
+      
+        <lastmod>2016-01-08T00:00:00+13:00</lastmod>
+      
+      <changefreq>weekly</changefreq>
+      <priority>1.0</priority>
+    </url>
+  
+    <url>
+      <loc>https://gadd.co.nz/ssh/2015/05/05/better-management-of-ssh-config-files.html</loc>
+      
+        <lastmod>2015-05-05T19:54:19+12:00</lastmod>
+      
+      <changefreq>weekly</changefreq>
+      <priority>1.0</priority>
+    </url>
+  
+    <url>
+      <loc>https://gadd.co.nz/security/2015/03/10/test-your-physical-security.html</loc>
+      
+        <lastmod>2015-03-10T09:36:22+13:00</lastmod>
+      
+      <changefreq>weekly</changefreq>
+      <priority>1.0</priority>
+    </url>
+  
+    <url>
+      <loc>https://gadd.co.nz/dotfiles/2015/02/04/zaw-plugin.html</loc>
+      
+        <lastmod>2015-02-04T12:44:15+13:00</lastmod>
+      
+      <changefreq>weekly</changefreq>
+      <priority>1.0</priority>
+    </url>
+  
 </urlset>
